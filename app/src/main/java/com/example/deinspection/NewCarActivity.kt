@@ -10,7 +10,8 @@ class NewCarActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.create_new_car)
+
+        setContentView(R.layout.activity_new_car)
 
         var value: String? = intent.getStringExtra("CAR_NUMBER")
 
@@ -20,13 +21,18 @@ class NewCarActivity : AppCompatActivity() {
         this.number= aux
     }
 
-    fun Next(view: View) {
 
-        setContentView(R.layout.create_next)
+
+    fun nextButton(view: View) {
+        //save definitions
+        setContentView(R.layout.activity_new_car_2)
+
+
 
     }
 
-    fun nextButton(view: View) {
+
+    fun next2Button(view: View) {
         //save definitions
         val intent = Intent(this, NewCar2Activity::class.java)
         //send only check options to set definitions
@@ -36,18 +42,7 @@ class NewCarActivity : AppCompatActivity() {
 
 
 
-    fun seeCar(view: View) {
 
-        // if btnFinish is clicked
-        // check if value == 1, thats an error
-        val intent = Intent(this, CarActivity::class.java)
-        intent.putExtra(CAR_NUMBER, this.number)
-        //intent.putExtra(CAR_LIST, list)
-        // send the list of all the cars
-        startActivity(intent)
-
-
-    }
 
 
 }

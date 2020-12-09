@@ -9,21 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DEInspection">
-        <activity android:name=".NewCar2Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".NewCarActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".CarActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SpinnerActivity" />
+        <activity android:name=".NewCar2Activity"/>
+        <activity android:name=".NewCarActivity"/>
+        <activity android:name=".CarActivity"/>
     </application>
 
 </manifest>
