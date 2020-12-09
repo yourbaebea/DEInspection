@@ -28,8 +28,6 @@ class NewCarActivity : AppCompatActivity() {
         //save definitions
         setContentView(R.layout.activity_new_car_2)
 
-
-
     }
 
 

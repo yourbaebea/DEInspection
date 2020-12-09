@@ -12,4 +12,20 @@
     <string name="car3">car3</string>
     <string name="add_new_car">Add new car</string>
     <string name="oleo">Oleo</string>
+    <string name="mudan_a_do_leo">Mudança do óleo</string>
+    <string name="pr_xima_inspe_o">Próxima inspeção</string>
+    <string name="renova_o_do_selo">Renovação do selo</string>
+    <string name="press_o_dos_pneus">Pressão dos pneus</string>
+    <string name="mudan_a_dos_pneus">Mudança dos pneus</string>
+    <string name="mudan_a_dos_filtos_de_ar">Mudança dos filtos de ar</string>
+    <string name="mudan_a_do_liquido_limpeza_de_vidros">Mudança do liquido limpeza de vidros</string>
+    <string name="inserir_lembrete_personalizado">Inserir lembrete personalizado</string>
+    <string name="selecione_os_lembretes_que_deseja">Selecione os lembretes que deseja</string>
+    <string name="inserir_lembrete_personalizado">Inserir lembrete personalizado</string>
+    <string name="defina_os_seus_alarmes">Defina os seus alarmes</string>
+    <string name="fim">Fim</string>
+    <string name="pr_ximo">Próximo</string>
+    <string name="mudan_a_dos_filtros_de_ar">Mudança dos filtros de ar</string>
+    <string name="lembrete_personalizado">Lembrete personalizado</string>
+    <string name="lembrete_personalizado">Lembrete personalizado</string>
 </resources>

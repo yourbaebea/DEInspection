@@ -12,7 +12,7 @@ import androidx.annotation.RequiresApi
 class NewCar2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_car_2)
+        setContentView(R.layout.activity_new_car_3)
         //seekBar()
 
        //var car = Car()
