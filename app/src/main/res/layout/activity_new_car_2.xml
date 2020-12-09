@@ -83,49 +83,49 @@
             android:orientation="vertical">
 
             <CheckBox
-                android:id="@+id/checkBox9"
+                android:id="@+id/oil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/oleo" />
+
+            <CheckBox
+                android:id="@+id/inspection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/inspeção" />
+
+            <CheckBox
+                android:id="@+id/stamp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/checkbox" />
 
             <CheckBox
-                android:id="@+id/checkBox10"
+                android:id="@+id/tirePressure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/checkbox" />
 
             <CheckBox
-                android:id="@+id/checkBox11"
+                android:id="@+id/tires"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/checkbox" />
 
             <CheckBox
-                android:id="@+id/checkBox12"
+                android:id="@+id/airFilters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/checkbox" />
 
             <CheckBox
-                android:id="@+id/checkBox13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/checkbox" />
-
-            <CheckBox
-                android:id="@+id/checkBox14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/checkbox" />
-
-            <CheckBox
-                android:id="@+id/checkBox15"
+                android:id="@+id/windowCleaner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/checkbox" />
 
             <EditText
-                android:id="@+id/editTextNewAttribute"
+                android:id="@+id/custom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

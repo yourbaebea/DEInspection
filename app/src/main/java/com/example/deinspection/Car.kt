@@ -12,6 +12,14 @@ class Car {
     var model: String = ""
     var date: Calendar? = null
     var oil = Attribute()
+    var inspection = Attribute()
+    var stamp = Attribute()
+    var tirePressure = Attribute()
+    var tires = Attribute()
+    var airFilters = Attribute()
+    var windowCleaner = Attribute()
+    var custom = Attribute()
+    var custom2 = Attribute()
 
     //create all the attributes here
 
@@ -22,6 +30,14 @@ class Car {
         this.model = m
         this.date = d
         this.oil.updateDate()
+        this.inspection.updateDate()
+        this.stamp.updateDate()
+        this.tirePressure.updateDate()
+        this.tires.updateDate()
+        this.airFilters.updateDate()
+        this.windowCleaner.updateDate()
+        this.custom.updateDate()
+        this.custom2.updateDate()
 
     }
 
@@ -31,8 +47,14 @@ class Car {
     fun updateReminder(n: String, i: Int) {
         var aux = Attribute()
         if (n == "oil") aux= this.oil
-        //if (n == "gas")
-        // do this for every attribute
+        if (n == "inspection") aux= this.inspection
+        if (n == "stamp") aux= this.stamp
+        if (n == "tirePressure") aux= this.tirePressure
+        if (n == "tires") aux= this.tires
+        if (n == "airFilters") aux= this.airFilters
+        if (n == "windowCleaner") aux= this.windowCleaner
+        if (n == "custom") aux= this.custom
+        if (n == "custom2") aux= this.custom2
         aux.reminder = i
         aux.setNextDate()
     }
@@ -42,11 +64,15 @@ class Car {
     fun updateCheck(n:String){
         var aux = Attribute()
         if (n == "oil") aux= this.oil
-        //if (n == "gas")
-        // do this for every attribute
+        if (n == "inspection") aux= this.inspection
+        if (n == "stamp") aux= this.stamp
+        if (n == "tirePressure") aux= this.tirePressure
+        if (n == "tires") aux= this.tires
+        if (n == "airFilters") aux= this.airFilters
+        if (n == "windowCleaner") aux= this.windowCleaner
+        if (n == "custom") aux= this.custom
+        if (n == "custom2") aux= this.custom2
         aux.updateDate()
-
-
     }
 
     inner class Attribute {
