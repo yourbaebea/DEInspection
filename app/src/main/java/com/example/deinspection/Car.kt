@@ -2,6 +2,7 @@ package com.example.deinspection
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import java.time.Duration
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -137,6 +138,13 @@ class Car {
         }
 
 
+        @RequiresApi(Build.VERSION_CODES.O)
+        fun countUntil(): String {
+            val aux : Long = Duration.between(this.nextdate?.toInstant(), this.lastdate?.toInstant()).toDays()
+            val aux2= aux.toInt()
+            if (aux2==1) return "$aux day"
+            return "$aux2 days"
+        }
     }
 
 }
