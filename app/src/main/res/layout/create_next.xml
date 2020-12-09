@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
         android:fontFamily="@font/comfortaa"
-        android:text="settings"
+        android:text="@string/settings"
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,13 +36,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnFinish"
+        android:id="@+id/btnNext2"
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:layout_marginBottom="52dp"
         android:fontFamily="@font/comfortaa"
-        android:onClick="seeCar"
-        android:text="finish"
+        android:onClick="nextButton"
+        android:text="@string/next"
         android:textColor="#000000"
         android:textColorHighlight="#00FFFFFF"
         android:textColorLink="#00FFFFFF"
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Set allarms for"
+        android:text="@string/set_allarms_for"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
         android:layout_width="304dp"
         android:layout_height="258dp"
         android:layout_marginTop="200dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnFinish"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -86,43 +86,43 @@
                 android:id="@+id/checkBox9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="@string/checkbox" />
 
             <CheckBox
                 android:id="@+id/checkBox10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="@string/checkbox" />
 
             <CheckBox
                 android:id="@+id/checkBox11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="@string/checkbox" />
 
             <CheckBox
                 android:id="@+id/checkBox12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="@string/checkbox" />
 
             <CheckBox
                 android:id="@+id/checkBox13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="@string/checkbox" />
 
             <CheckBox
                 android:id="@+id/checkBox14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="@string/checkbox" />
 
             <CheckBox
                 android:id="@+id/checkBox15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="@string/checkbox" />
 
         </LinearLayout>
     </ScrollView>

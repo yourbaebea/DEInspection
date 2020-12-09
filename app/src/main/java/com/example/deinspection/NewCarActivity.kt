@@ -22,10 +22,18 @@ class NewCarActivity : AppCompatActivity() {
 
     fun Next(view: View) {
 
-        setContentView(R.layout.create_new_car)
-
+        setContentView(R.layout.create_next)
 
     }
+
+    fun nextButton(view: View) {
+        //save definitions
+        val intent = Intent(this, NewCar2Activity::class.java)
+        //send only check options to set definitions
+        startActivity(intent)
+
+    }
+
 
 
     fun seeCar(view: View) {

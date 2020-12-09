@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">DEInspection</string>
-    <string name="deinspection">DEInspection</string>
     <string name="brand_of_the_car">brand of the car</string>
     <string name="deinspection">DEInspection</string>
+    <string name="settings">settings</string>
+    <string name="set_allarms_for">Set allarms for</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="next">next</string>
+    <string name="DEInspection">DEInspection</string>
+    <string name="car1">car1</string>
+    <string name="car2">car2</string>
+    <string name="car3">car3</string>
+    <string name="add_new_car">Add new car</string>
 </resources>
