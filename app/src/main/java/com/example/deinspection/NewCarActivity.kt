@@ -1,3 +1,4 @@
+
 package com.example.deinspection
 
 import android.content.Intent
@@ -38,10 +39,6 @@ class NewCarActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
-
-
-
-
 
 
 }

@@ -22,7 +22,7 @@ class Car {
     var custom2 = Attribute()
 
     //create all the attributes here
-
+    var attr = ArrayList<Attribute>()
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun init(b: String, m: String, d: Calendar) {
@@ -76,6 +76,7 @@ class Car {
     }
 
     inner class Attribute {
+        var option: Boolean =false
         var checkcounter: Int = 0
         var lastdate: Calendar? = null
         var nextdate: Calendar? = null
