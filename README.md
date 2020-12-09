@@ -8,4 +8,5 @@ what to do
 - try to run the code (cant promise it works i did some shit after the last run)
 - hope to die
 
-ps: idk what i did bc i watched 19023890123823 different yt videos
+simple animations
+- https://www.youtube.com/watch?v=ozswQEgb2-w
