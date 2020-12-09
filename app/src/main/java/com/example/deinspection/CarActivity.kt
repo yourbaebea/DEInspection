@@ -15,8 +15,8 @@ class CarActivity : AppCompatActivity() {
     }
 
     fun helpBtn(view: View){
-        val id : String = view.id.toString()
-        val i = id[-1].toInt() //this is the number of the attribute clicked
+        //val id : String = view.id.toString()
+        //val i = id[-1].toInt() //this is the number of the attribute clicked
 
 
         // check the attribute related to the click
