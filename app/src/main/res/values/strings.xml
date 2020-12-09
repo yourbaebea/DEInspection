@@ -12,4 +12,9 @@
     <string name="car3">car3</string>
     <string name="add_new_car">Add new car</string>
     <string name="oleo">Oleo</string>
+    <string name="attr1">texto \n \n uwu</string>
+    <string name="ajuda">ajuda</string>
+    <string name="info">info</string>
+    <string name="atualizar">atualizar</string>
+    <string name="todo">TODO</string>
 </resources>

@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DEInspection">
 
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,10 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SpinnerActivity" />
-        <activity android:name=".NewCar2Activity"/>
-        <activity android:name=".NewCarActivity"/>
-        <activity android:name=".CarActivity"/>
+        <activity android:name=".NewCar2Activity" />
+        <activity android:name=".NewCarActivity" />
+        <activity android:name=".CarActivity" />
+        <activity android:name=".EditDetailsActivity"/>
+        <activity android:name=".CarDetailsHelpActivity" />
+        <activity android:name=".CarDetailsInfoActivity" />
     </application>
 
 </manifest>

@@ -4,8 +4,531 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".CarActivity">
 
     <!-- seeing the car reminders/progress next time here-->
+
+    <ScrollView
+        android:layout_width="321dp"
+        android:layout_height="492dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="153dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="102dp"
+                            tools:srcCompat="@tools:sample/avatars"
+                            android:contentDescription="@string/todo" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:text="@string/attr1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnHelp2"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/ajuda"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnInfo2"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/info"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnUpdate2"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:onClick="updateBtn"
+                            android:text="@string/atualizar"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="153dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="102dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:text="@string/attr1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnHelp3"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/ajuda"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnInfo3"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/info"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnUpdate3"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:onClick="updateBtn"
+                            android:text="@string/atualizar"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="153dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="102dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:text="@string/attr1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnHelp4"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/ajuda"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnInfo4"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/info"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnUpdate4"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:onClick="updateBtn"
+                            android:text="@string/atualizar"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="153dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="102dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:text="@string/attr1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnHelp5"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="ajuda"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnInfo5"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/info"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnUpdate5"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:onClick="updateBtn"
+                            android:text="@string/atualizar"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="153dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="102dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:text="@string/attr1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnHelp6"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="ajuda"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnInfo6"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/info"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                        <Button
+                            android:id="@+id/btnUpdate6"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:onClick="updateBtn"
+                            android:text="@string/atualizar"
+                            android:textColor="#000000"
+                            android:textColorHighlight="#00FFFFFF"
+                            android:textColorLink="#00FFFFFF"
+                            android:textSize="12sp"
+                            app:backgroundTint="#00FFFFFF"
+                            app:iconTint="#00FFFFFF"
+                            app:layout_constraintBottom_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.495"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
+                            app:layout_constraintVertical_bias="0.524"
+                            app:rippleColor="#00FFFFFF" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
