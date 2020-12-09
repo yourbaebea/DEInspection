@@ -26,7 +26,7 @@ class CarDetailsHelpActivity : AppCompatActivity() {
         // the value of thisdetail.reminder
         //just for tests
         var reminder: Int = 2
-        var aux= (reminder/22 * 100)
+        var aux= ((22- reminder) *100)
 
         progress_bar.progress = aux
         progress_text.text = "$aux%"
