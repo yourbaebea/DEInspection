@@ -10,3 +10,6 @@ what to do
 
 simple animations
 - https://www.youtube.com/watch?v=ozswQEgb2-w
+
+circular progress bar
+- https://www.tutorialspoint.com/how-to-create-circular-progressbar-in-android-using-kotlin
