@@ -13,7 +13,7 @@ simple animations
 
 circular progress bar
 - https://www.tutorialspoint.com/how-to-create-circular-progressbar-in-android-using-kotlin
-
+- https://www.youtube.com/watch?v=YsHHXg1vbcc
 
 CustomProgressBarActivity.java:
 
