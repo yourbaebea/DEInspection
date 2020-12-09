@@ -8,6 +8,21 @@ import kotlin.collections.ArrayList
 
 class Car {
 
+    /*
+        on buttons related to the car or attributes
+
+        CASE1: id is type attr1, textview1, btn1, car1
+
+        val id : String = view.id.toString()
+        val i = id[-1].toInt() //this is the number of the attribute clicked
+
+        CASE2: id is type oil, tires, etc
+        val id : String = view.id.toString()
+        if(id=="oil")  ...
+
+
+     */
+
     var brand: String = ""
     var model: String = ""
     var date: Calendar? = null

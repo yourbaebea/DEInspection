@@ -25,5 +25,12 @@
     <string name="pr_ximo">Próximo</string>
     <string name="mudan_a_dos_filtros_de_ar">Mudança dos filtros de ar</string>
     <string name="lembrete_personalizado">Lembrete personalizado</string>
+    <string name="ajuda">ajuda</string>
+    <string name="todo">todo</string>
+    <string name="attr1">attr1</string>
+    <string name="info">info</string>
+    <string name="atualizar">atualizar</string>
+    <string name="mais_sobre_inspecao">mais sobre inspecao</string>
+    <string name="proximainspecao">próxima inspeção a dd.mm.yyyy</string>
 
 </resources>

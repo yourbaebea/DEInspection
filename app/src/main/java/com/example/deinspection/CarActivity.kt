@@ -14,15 +14,11 @@ class CarActivity : AppCompatActivity() {
 
     }
 
-    fun updateBtn(view: View){
-        // check the attribute related to the click
-        // and update that
-        //car.attribute.updateDate()
-
-
-    }
-
     fun helpBtn(view: View){
+        val id : String = view.id.toString()
+        val i = id[-1].toInt() //this is the number of the attribute clicked
+
+
         // check the attribute related to the click
 
         //go to CarDetailsHelp
@@ -36,4 +32,41 @@ class CarActivity : AppCompatActivity() {
 
 
     }
+
+    fun infoBtn(view: View){
+        val id : String = view.id.toString()
+        val i = id[-1].toInt() //this is the number of the attribute clicked
+
+
+        // check the attribute related to the click
+
+        //go to CarDetailsInfo
+        val intent = Intent(this, CarDetailsInfoActivity::class.java)
+
+        // save the car and the attribute
+        // var car = 1, attr="oil"
+        //something like that
+
+        startActivity(intent)
+
+
+    }
+
+    fun updateBtn(view: View){
+
+        val id : String = view.id.toString()
+        val i = id[-1].toInt() //this is the number of the attribute clicked
+
+
+
+        // check the attribute related to the click
+        // and update that
+        //car.attribute.updateDate()
+
+
+    }
+
+
+
+
 }
