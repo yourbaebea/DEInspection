@@ -11,6 +11,7 @@
         android:id="@+id/DEInspection"
         android:layout_width="253dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="@string/DEInspection"
         android:textColor="#000000"
@@ -34,16 +35,17 @@
         app:iconTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnCar2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DEInspection"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.524"
         app:rippleColor="#00FFFFFF" />
 
     <Button
         android:id="@+id/btnCar2"
         android:layout_width="300dp"
         android:layout_height="150dp"
+        android:layout_marginTop="212dp"
         android:fontFamily="@font/comfortaa"
         android:onClick="seeCar"
         android:text="@string/car2"
@@ -53,30 +55,8 @@
         android:textSize="36sp"
         app:backgroundTint="#00FFFFFF"
         app:iconTint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/btnCar3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DEInspection"
-        app:layout_constraintVertical_bias="1.0"
-        app:rippleColor="#00FFFFFF" />
-
-    <Button
-        android:id="@+id/btnCar3"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="424dp"
-        android:fontFamily="@font/comfortaa"
-        android:onClick="seeCar"
-        android:text="@string/car3"
-        android:textColor="#000000"
-        android:textColorHighlight="#00FFFFFF"
-        android:textColorLink="#00FFFFFF"
-        android:textSize="36sp"
-        app:backgroundTint="#00FFFFFF"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DEInspection"
         app:rippleColor="#00FFFFFF" />
@@ -100,8 +80,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCar3"
-        app:layout_constraintVertical_bias="1.0"
         app:rippleColor="#00FFFFFF"
         tools:visibility="visible" />
 
