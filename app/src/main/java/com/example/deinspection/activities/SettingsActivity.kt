@@ -28,13 +28,15 @@ import java.util.Calendar
 
 class SettingsActivity : AppCompatActivity() {
     //this should be a global var, default time of hour or minute
-    var hour : Int =9
-    var minute: Int =30
+    var hours : Int =9
+    var minutes: Int =30
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        timeTv.text= hour.toString() + ":" + minute.toString() //time for alarm
+        timeTv.text=" "+ hours.toString() + ":" + minutes.toString() //time for alarm
 
         //edit time for alarm
         pickTimeBtn.setOnClickListener() {
@@ -43,11 +45,18 @@ class SettingsActivity : AppCompatActivity() {
                 cal.set(Calendar.HOUR_OF_DAY, hourOfDay)
                 cal.set(Calendar.MINUTE, minute)
                 timeTv.text = SimpleDateFormat("HH:mm", Locale.getDefault()).format(cal.time)
-                hour
+                hours = cal.get(Calendar.HOUR_OF_DAY)
+                minutes= cal.get(Calendar.MINUTE)
             }
             TimePickerDialog(this, timeSet, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
-
         }
+
+
+
+
+
+
+
     }
 }
 
