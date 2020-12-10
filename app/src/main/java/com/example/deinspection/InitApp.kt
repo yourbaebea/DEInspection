@@ -25,6 +25,17 @@ class MainActivity : AppCompatActivity() {
         //when reading is finished : or set an animation for the loading bar
         //activity main is the first page on the app, just the logo + loading bar(?)
         //
+        show_btn.setOnClickListener {
+            val intent = Intent(this, PopUpWindow::class.java)
+            intent.putExtra("popuptitle", "Error")
+            intent.putExtra("popuptext", "Sorry, that email address is already used!")
+            intent.putExtra("popupbtn", "OK")
+            intent.putExtra("darkstatusbar", false)
+            startActivity(intent)
+        }
+
+
+
         loaded()
     }
 
