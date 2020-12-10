@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.deinspection.R
+import kotlinx.android.synthetic.main.activity_new_car.*
 
 
 class NewCarActivity : AppCompatActivity() {
@@ -28,6 +29,11 @@ class NewCarActivity : AppCompatActivity() {
 
     fun nextButton(view: View) {
         //save definitions
+
+        val marca = editCarBrand.text.toString()
+        val modelo = editCarModel.text.toString()
+        val data = editTextDate.text.toString()
+        val matricula = editTextMatricula.text.toString()//
 
         setContentView(R.layout.activity_new_car_2)
 
