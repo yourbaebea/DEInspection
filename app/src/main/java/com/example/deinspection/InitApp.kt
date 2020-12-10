@@ -8,6 +8,8 @@ import com.example.deinspection.activities.CarActivity
 import com.example.deinspection.activities.MainMenuActivity
 import com.example.deinspection.activities.NewCarActivity
 
+import kotlinx.android.synthetic.main.activity_init_app.*
+
 const val CAR_NUMBER = "com.example.deinspection.CAR"
 
 class MainActivity : AppCompatActivity() {

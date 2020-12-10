@@ -16,11 +16,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.ColorUtils
 
 
-
-
 import kotlinx.android.synthetic.main.activity_pop_up_window.*
 
-class pop_upWindow : AppCompatActivity() {
+class PopUpWindow : AppCompatActivity() {
     private var pop_upTitle = ""
     private var pop_upText = ""
     private var pop_upButton = ""
