@@ -33,7 +33,7 @@ class NewCarActivity : AppCompatActivity() {
         val marca = editCarBrand.text.toString()
         val modelo = editCarModel.text.toString()
         val data = editTextDate.text.toString()
-        val matricula = editTextMatricula.text.toString()
+        val matricula = editTextMatricula.text.toString()//
 
         setContentView(R.layout.activity_new_car_2)
 
