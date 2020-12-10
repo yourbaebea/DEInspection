@@ -92,7 +92,7 @@ class Car {
     }
 
     inner class Attribute {
-        var option: Boolean =false
+        var selected: Boolean =false
         var checkcounter: Int = 0
         var lastdate: Calendar? = null
         var nextdate: Calendar? = null
