@@ -27,6 +27,7 @@ class NewCarActivity : AppCompatActivity() {
 
     fun nextButton(view: View) {
         //save definitions
+
         setContentView(R.layout.activity_new_car_2)
 
     }
