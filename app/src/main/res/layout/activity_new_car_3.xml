@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".NewCar2Activity">
+    tools:context=".activities.NewCar2Activity">
 
 
     <TextView

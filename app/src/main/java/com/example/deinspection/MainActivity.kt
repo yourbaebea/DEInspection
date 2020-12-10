@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.deinspection.activities.CarActivity
+import com.example.deinspection.activities.NewCarActivity
 
 const val CAR_NUMBER = "com.example.deinspection.CAR"
 

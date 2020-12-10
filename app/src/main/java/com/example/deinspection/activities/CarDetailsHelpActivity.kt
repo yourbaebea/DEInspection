@@ -1,11 +1,10 @@
-package com.example.deinspection
+package com.example.deinspection.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.example.deinspection.R
 
 
 class CarDetailsHelpActivity : AppCompatActivity() {

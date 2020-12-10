@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DEInspection">
-        <activity android:name=".InspectionActivity"></activity>
+        <activity android:name=".activities.InspectionActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,12 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewCar2Activity" />
-        <activity android:name=".NewCarActivity" />
-        <activity android:name=".CarActivity" />
-        <activity android:name=".EditDetailsActivity" />
-        <activity android:name=".CarDetailsHelpActivity" />
-        <activity android:name=".CarDetailsInfoActivity" />
+        <activity android:name=".activities.NewCar2Activity" />
+        <activity android:name=".activities.NewCarActivity" />
+        <activity android:name=".activities.CarActivity" />
+        <activity android:name=".activities.EditDetailsActivity" />
+        <activity android:name=".activities.CarDetailsHelpActivity" />
+        <activity android:name=".activities.CarDetailsInfoActivity" />
     </application>
 
 </manifest>

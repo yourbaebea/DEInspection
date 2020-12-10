@@ -1,7 +1,8 @@
-package com.example.deinspection
+package com.example.deinspection.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.deinspection.R
 
 class CarDetailsInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

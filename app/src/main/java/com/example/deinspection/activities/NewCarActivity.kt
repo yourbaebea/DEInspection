@@ -1,10 +1,11 @@
 
-package com.example.deinspection
+package com.example.deinspection.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.deinspection.R
 
 
 class NewCarActivity : AppCompatActivity() {
