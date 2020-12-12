@@ -3,10 +3,9 @@ package com.example.deinspection
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.example.deinspection.activities.CarActivity
+
 import com.example.deinspection.activities.MainMenuActivity
-import com.example.deinspection.activities.NewCarActivity
+
 
 import kotlinx.android.synthetic.main.activity_init_app.*
 
