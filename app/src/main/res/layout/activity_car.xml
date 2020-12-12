@@ -11,10 +11,8 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="336dp"
-        android:layout_height="383dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="250dp"
+        android:layout_width="335dp"
+        android:layout_height="477dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -656,16 +654,15 @@
         android:text="@string/mais_sobre_inspecao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.128" />
+        app:layout_constraintVertical_bias="0.696" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="214dp"
         android:layout_height="36dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="48dp"
         android:text="@string/proximainspecao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -682,6 +679,7 @@
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

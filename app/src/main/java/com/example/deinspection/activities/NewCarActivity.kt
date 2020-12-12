@@ -20,33 +20,36 @@ class NewCarActivity : AppCompatActivity() {
         var value: String? = intent.getStringExtra("CAR_NUMBER")
 
         // converts the value, if the value is not int default is 0
-        var aux: Int = value?.toInt() ?:  0
+        var aux: Int = value?.toInt() ?: 0
 
-        this.number= aux
+        this.number = aux
+
+        btnBackNC.setOnClickListener() {
+
+
+            //go back
+            val intent = Intent(this, MainMenuActivity::class.java)
+            //send only check options to set definitions
+            startActivity(intent)
+
+        }
+
+        btnNext.setOnClickListener(){
+            //save definitions
+
+            val marca = editCarBrand.text.toString()
+            val modelo = editCarModel.text.toString()
+            val data = editTextDate.text.toString()
+            val matricula = editTextMatricula.text.toString()
+            //go to the next page
+            val intent = Intent(this, NewCar2Activity::class.java)
+            //send only check options to set definitions
+            startActivity(intent)
+        }
+
+
+
+
     }
-
-
-
-    fun nextButton(view: View) {
-        //save definitions
-
-        val marca = editCarBrand.text.toString()
-        val modelo = editCarModel.text.toString()
-        val data = editTextDate.text.toString()
-        val matricula = editTextMatricula.text.toString()//
-
-        setContentView(R.layout.activity_new_car_2)
-
-    }
-
-
-    fun next2Button(view: View) {
-        //save definitions
-        val intent = Intent(this, NewCar2Activity::class.java)
-        //send only check options to set definitions
-        startActivity(intent)
-
-    }
-
 
 }
