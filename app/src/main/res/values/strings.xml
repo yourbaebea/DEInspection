@@ -33,5 +33,12 @@
     <string name="mais_sobre_inspecao">mais sobre inspecao</string>
     <string name="proximainspecao">próxima inspeção a dd.mm.yyyy</string>
     <string name="voltar">Voltar</string>
+    <string name="edit_time_for_alarm">edit time for alarm</string>
+    <string name="_9_30">9:30</string>
+    <string name="mais_sobre_deinspection">Mais sobre DEInspection</string>
+    <string name="instagram">Instagram</string>
+    <string name="facebook">Facebook</string>
+    <string name="feedback_deixe_nos_a_sua_opiniao">Feedback- deixe-nos a sua opiniao!</string>
+    <string name="reportar_erro">Reportar erro</string>
 
 </resources>

@@ -81,8 +81,6 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
 
-
-
     //aux to the listeners to see the car number n
     fun seeCar(n: Int) {
 

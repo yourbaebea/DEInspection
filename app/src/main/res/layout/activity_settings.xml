@@ -4,29 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".activities.SettingsActivity">
 
-    <Button
-        android:id="@+id/pickTimeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="edit time for alarm"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="384dp"
+        android:layout_height="598dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
+        app:layout_constraintVertical_bias="0.706">
 
-    <TextView
-        android:id="@+id/timeTv"
-        android:layout_width="266dp"
-        android:layout_height="72dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pickTimeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/edit_time_for_alarm"
+                android:textColor="#000000"
+                app:backgroundTint="@color/background"
+                app:iconTint="#000000" />
+
+            <TextView
+                android:id="@+id/timeTv"
+                android:layout_width="166dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/_9_30"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnMoreAbout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/mais_sobre_deinspection"
+            android:textColor="#000000"
+            app:backgroundTint="@color/background"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btnInstagram"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/instagram"
+            android:textColor="#000000"
+            app:backgroundTint="@color/background"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btnFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/facebook"
+            android:textColor="#000000"
+            app:backgroundTint="@color/background"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btnFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/feedback_deixe_nos_a_sua_opiniao"
+            android:textColor="#000000"
+            app:backgroundTint="@color/background"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btnFeedback2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/reportar_erro"
+            android:textColor="#000000"
+            app:backgroundTint="@color/background"
+            app:iconTint="#000000" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="145dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="27dp"
+        android:drawableLeft="@drawable/arrowback"
+        android:text="Back"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pickTimeBtn"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
