@@ -32,5 +32,6 @@
     <string name="atualizar">atualizar</string>
     <string name="mais_sobre_inspecao">mais sobre inspecao</string>
     <string name="proximainspecao">próxima inspeção a dd.mm.yyyy</string>
+    <string name="voltar">Voltar</string>
 
 </resources>
