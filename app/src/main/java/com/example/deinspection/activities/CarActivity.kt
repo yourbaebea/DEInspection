@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.deinspection.CAR_NUMBER
 import com.example.deinspection.R
+import kotlinx.android.synthetic.main.activity_car.*
 
 class CarActivity : AppCompatActivity() {
     var car : Int ? = 0
