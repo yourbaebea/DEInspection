@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.deinspection.CAR_NUMBER
+import com.example.deinspection.PopUpWindow
 import com.example.deinspection.R
+import kotlinx.android.synthetic.main.activity_init_app.*
 import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.text.SimpleDateFormat
@@ -22,7 +24,16 @@ class MainMenuActivity : AppCompatActivity() {
             seeCar(1)
         }
         btnCar2.setOnClickListener() {
-            seeCar(2)
+            //seeCar(2)
+            show_btn.setOnClickListener {
+                val intent = Intent(this, PopUpWindow::class.java)
+                intent.putExtra("popuptitle", "Error")
+                intent.putExtra("popuptext", "Sorry, that email address is already used!")
+                intent.putExtra("popupbtn", "OK")
+                intent.putExtra("darkstatusbar", false)
+                startActivity(intent)
+            }
+
         }
         btnCar3.setOnClickListener() {
             seeCar(3)

@@ -24,9 +24,13 @@ class Car {
 
      */
 
+
+
     var brand: String = ""
     var model: String = ""
+    var licenceplate: String=""
     var date: Calendar? = null
+
     var oil = Attribute()
     var inspection = Attribute()
     var stamp = Attribute()
@@ -38,16 +42,23 @@ class Car {
     var custom2 = Attribute()
 
     //create all the attributes here
-    var attr = ArrayList<Attribute>()
+
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun init(b: String, m: String, d: Calendar) {
+    fun init(b: String, m: String, l: String, d: Calendar) {
         this.brand = b
         this.model = m
+        this.licenceplate = l
         this.date = d
+
+        //get date from matricula
+        //stamp and inspection are calculated from that date
+        // the reminder of stamp/inspection is null, bc we always do it the same day/month every year
+        licencePlate()
+
+
+        //default value for last date is the creation moment
         this.oil.updateDate()
-        this.inspection.updateDate()
-        this.stamp.updateDate()
         this.tirePressure.updateDate()
         this.tires.updateDate()
         this.airFilters.updateDate()
@@ -55,61 +66,53 @@ class Car {
         this.custom.updateDate()
         this.custom2.updateDate()
 
+        //default value for value is here
+        // JUST FOR TESTING ALL DEFAULT VALUES ARE 1 MEANING EVERY DAY
+        this.oil.updateReminder(1)
+        this.tirePressure.updateReminder(1)
+        this.tires.updateReminder(1)
+        this.airFilters.updateReminder(1)
+        this.windowCleaner.updateReminder(1)
+        this.custom.updateReminder(1)
+        this.custom2.updateReminder(1)
+
+
     }
 
-
-    //this is a button listener for when an attribute is updated
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun updateReminder(n: String, i: Int) {
-        var aux = Attribute()
-        if (n == "oil") aux= this.oil
-        if (n == "inspection") aux= this.inspection
-        if (n == "stamp") aux= this.stamp
-        if (n == "tirePressure") aux= this.tirePressure
-        if (n == "tires") aux= this.tires
-        if (n == "airFilters") aux= this.airFilters
-        if (n == "windowCleaner") aux= this.windowCleaner
-        if (n == "custom") aux= this.custom
-        if (n == "custom2") aux= this.custom2
-        aux.reminder = i
-        aux.setNextDate()
-    }
-
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun updateCheck(n:String){
-        var aux = Attribute()
-        if (n == "oil") aux= this.oil
-        if (n == "inspection") aux= this.inspection
-        if (n == "stamp") aux= this.stamp
-        if (n == "tirePressure") aux= this.tirePressure
-        if (n == "tires") aux= this.tires
-        if (n == "airFilters") aux= this.airFilters
-        if (n == "windowCleaner") aux= this.windowCleaner
-        if (n == "custom") aux= this.custom
-        if (n == "custom2") aux= this.custom2
-        aux.updateDate()
-    }
-
+    //class attribute for each attribute oil, inspection, etc
     inner class Attribute {
         var selected: Boolean =false
-        var checkcounter: Int = 0
+        lateinit var title: String
+        var checkcounter: Int = -1
         var lastdate: Calendar? = null
         var nextdate: Calendar? = null
         var reminder: Int = 0
         var listcheckdates: ArrayList<Calendar>?=null
 
 
-
+        //when update button of attribute is clicked it should get here
+        // on the page this.car.(attr clicked).updateDate()
         @RequiresApi(Build.VERSION_CODES.O)
         fun updateDate(){
             //whenever we input a new check on a attribute
-
             val current : Calendar = Calendar.getInstance()
             this.checkcounter +=1
             this.lastdate = current
-            this.lastdate?.let { listcheckdates?.add(it) }
-            if (reminder!=0) setNextDate() //when defining the settings, there is no reminder so it doesnt have a reminder
+            this.lastdate?.let { listcheckdates?.add(it) } // the first value is the creation moment
+            if(checkcounter==0) setNextDate() //when defining the settings there is no reminder
+        }
+
+        //for updates on the next inspection do this.car.inspection.updateDateLicencePlate
+        // this function saves the date when the inspection/stamp was made but ONLY changes the year of the next date
+        // no mather when you do the inspection/stamp it will only remind you on the next inspection/stamp
+        @RequiresApi(Build.VERSION_CODES.O)
+        fun updateDateLicencePlate(){
+            //whenever we input a new check on a attribute
+            val current : Calendar = Calendar.getInstance()
+            this.checkcounter +=1
+            this.lastdate = current
+            this.lastdate?.let { listcheckdates?.add(it) } // the first value is the creation moment
+            this.nextdate?.add(Calendar.YEAR, 1)
         }
 
         // this function is also to show text in definitions of the attributes on newcar2activity
@@ -127,14 +130,11 @@ class Car {
                 else -> println("something went wrong value is out of bounds")
             }
 
-            //get the last date (its right now) and adds the amount of time of the reminder
-            this.nextdate= this.lastdate
-
+            //get the last date and adds the amount of time of the reminder
+            if (this.lastdate!=null) this.nextdate= this.lastdate
             this.nextdate?.add(Calendar.MONTH, months)
             this.nextdate?.add(Calendar.DAY_OF_YEAR, days)
             this.nextdate?.add(Calendar.YEAR, years)
-
-
         }
 
 
@@ -145,6 +145,48 @@ class Car {
             if (aux2==1) return "$aux day"
             return "$aux2 days"
         }
+
+        @RequiresApi(Build.VERSION_CODES.O)
+        fun updateReminder(i: Int) {
+            this.reminder = i
+            this.setNextDate()
+        }
+
     }
+
+    // only used when creating new car, for updates on the next inspection do this.car.inspection.updateDateLicencePlate()
+    // gets the date from the licence plate and sets last and next inspection and stamp
+    fun licencePlate(){
+
+        var current : Calendar = Calendar.getInstance()
+        var aux : Calendar? = this.date
+
+        var years: Int= current.get(Calendar.YEAR) - (this.date?.get(Calendar.YEAR) ?: 0)
+
+        aux?.add(Calendar.YEAR, years)
+
+        val year= current.before(aux)
+        if (year) aux?.add(Calendar.YEAR, -1)
+        // if current date is before the licence plate month and day(aux) , it means the lastdate was the year before
+
+
+        aux?.add(Calendar.YEAR, years)
+        this.inspection.lastdate= aux
+        this.stamp.lastdate= aux
+
+        this.inspection.nextdate= this.inspection.lastdate
+        this.stamp.nextdate= this.stamp.lastdate
+        this.inspection.nextdate?.add(Calendar.YEAR, 1)
+        this.stamp.nextdate?.add(Calendar.YEAR, 1)
+    }
+
+
+
+
+
+
+
+
+
 
 }
