@@ -1,17 +1,11 @@
 package com.example.deinspection.activities
 
-import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.deinspection.CAR_NUMBER
 import com.example.deinspection.R
-import kotlinx.android.synthetic.main.activity_main_menu.*
-import kotlinx.android.synthetic.main.activity_settings.*
-import kotlinx.android.synthetic.main.activity_new_car_2.*
-import java.text.SimpleDateFormat
-import java.util.*
 
 class CarActivity : AppCompatActivity() {
     var car : Int ? = 0

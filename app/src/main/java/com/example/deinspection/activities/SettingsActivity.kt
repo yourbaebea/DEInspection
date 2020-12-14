@@ -12,14 +12,13 @@ import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.TimePickerDialog
-import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
 import androidx.core.graphics.ColorUtils
-import com.example.deinspection.CAR_NUMBER
+
 
 
 import java.text.SimpleDateFormat
@@ -52,16 +51,6 @@ class SettingsActivity : AppCompatActivity() {
             TimePickerDialog(this, timeSet, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
 
-        btnMoreAbout.setOnClickListener(){
-            val intent = Intent(this, MoreAboutActivity::class.java)
-            //value = size of list of cars
-            var value: Int = 3
-            //TEMPORARIO
-            intent.putExtra(CAR_NUMBER, value)
-            //intent.putExtra(CAR_LIST, list)
-            // send the list of all the cars, for us to add
-            startActivity(intent)
-        }
 
 
 
