@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.deinspection.CAR_NUMBER
 import com.example.deinspection.R
 
 class CarActivity : AppCompatActivity() {
@@ -12,6 +13,69 @@ class CarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car)
 
+        btnHelp1.setOnClickListener() {
+            //check if list of current cars is equal max (3?)
+            // if list of cars is max error message
+
+            //else
+            // list of cars append new empty one
+            //go to page create new car
+
+            /*
+            if (size of list of car < max)
+             */
+
+            val intent = Intent(this, CarDetailsHelpActivity::class.java)
+            //value = size of list of cars
+            val value: Int = 3
+            //TEMPORARIO
+            intent.putExtra(CAR_NUMBER, value)
+            //intent.putExtra(CAR_LIST, list)
+            // send the list of all the cars, for us to add
+            startActivity(intent)
+        }
+        btnInfo1.setOnClickListener() {
+            //check if list of current cars is equal max (3?)
+            // if list of cars is max error message
+
+            //else
+            // list of cars append new empty one
+            //go to page create new car
+
+            /*
+            if (size of list of car < max)
+             */
+
+            val intent = Intent(this, CarDetailsInfoActivity::class.java)
+            //value = size of list of cars
+            val value: Int = 3
+            //TEMPORARIO
+            intent.putExtra(CAR_NUMBER, value)
+            //intent.putExtra(CAR_LIST, list)
+            // send the list of all the cars, for us to add
+            startActivity(intent)
+        }
+        btnUpdate1.setOnClickListener() {
+            //check if list of current cars is equal max (3?)
+            // if list of cars is max error message
+
+            //else
+            // list of cars append new empty one
+            //go to page create new car
+
+            /*
+            if (size of list of car < max)
+             */
+
+            val intent = Intent(this, EditDetailsActivity::class.java)
+            //value = size of list of cars
+            val value: Int = 3
+            //TEMPORARIO
+            intent.putExtra(CAR_NUMBER, value)
+            //intent.putExtra(CAR_LIST, list)
+            // send the list of all the cars, for us to add
+            startActivity(intent)
+        }
 
     }
 
