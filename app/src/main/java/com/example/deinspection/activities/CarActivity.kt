@@ -49,6 +49,8 @@ class CarActivity : AppCompatActivity() {
 
         editCarBtn.setOnClickListener() {
             val intent = Intent(this, NewCarActivity::class.java)
+            //we send the current car
+            intent.putExtra("Car",car)
             startActivity(intent)
         }
     }

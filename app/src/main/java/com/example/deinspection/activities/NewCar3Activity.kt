@@ -118,9 +118,6 @@ class NewCar3Activity : AppCompatActivity() {
 
 
 
-    fun updateSeekBarTV() {
-
-    }
 
 
     fun editTV(value: Int): String {

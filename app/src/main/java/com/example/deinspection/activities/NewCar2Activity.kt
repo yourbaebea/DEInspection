@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
-import kotlinx.android.synthetic.main.activity_new_car.*
+import com.example.deinspection.MainActivity.Companion.carList
 import kotlinx.android.synthetic.main.activity_new_car_2.*
 import java.util.*
 
@@ -86,6 +86,12 @@ class NewCar2Activity : AppCompatActivity() {
 
     //save all the info in this page
     fun saveInfo(){
+        //save all seekbar info, dates etc
+        val car = intent.extras?.get("Car") as Car
+
+        carList.add(car)  // not sure if we should save it in this Activity or Last one
+        //we should get this from the array of cars
+        //this is car number = number
 
         car.oil.selected = oil.isChecked
         car.inspection.selected= inspection.isChecked

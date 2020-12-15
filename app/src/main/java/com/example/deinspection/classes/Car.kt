@@ -5,9 +5,9 @@ import androidx.annotation.RequiresApi
 import java.time.Duration
 import java.util.*
 import kotlin.collections.ArrayList
+import java.io.Serializable
 
-
-class Car {
+class Car: Serializable {
 
     /*
         on buttons related to the car or attributes

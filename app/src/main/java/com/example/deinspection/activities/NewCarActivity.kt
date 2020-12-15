@@ -15,19 +15,27 @@ import androidx.annotation.RequiresApi
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
 import kotlinx.android.synthetic.main.activity_new_car.*
+import com.example.deinspection.MainActivity.Companion.carList
 import java.util.*
+import java.io.Serializable
 
 
 class NewCarActivity : AppCompatActivity() {
     var number: Int=0
-    var car = Car()
     var accepted= false
+    var car = Car()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_new_car)
+
+        /*
+        see if there is extra content from the page
+
+        car=getExtra("Car")
+         */
 
 
         // if the car already exists, we fill it with the info we already have
@@ -80,6 +88,7 @@ class NewCarActivity : AppCompatActivity() {
             if (accepted) {
                 val intent = Intent(this, NewCar2Activity::class.java)
                 //send only check options to set definitions
+                intent.putExtra("Car",car)
                 startActivity(intent)
             }
             else {
@@ -97,7 +106,6 @@ class NewCarActivity : AppCompatActivity() {
     private fun goBack(){
         //save definitions
         val intent = Intent(this, NewCarActivity::class.java)
-
         startActivity(intent)
     }
 
@@ -106,6 +114,8 @@ class NewCarActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun saveInfo(car: Car): Boolean{
 
+        //if the car is null we create the new car
+        if (car==null) carList.add(car)
 
         val marca = editCarBrand.text.toString()
         val modelo = editCarModel.text.toString()
