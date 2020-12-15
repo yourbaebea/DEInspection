@@ -1,4 +1,10 @@
 # DEInspection
+
+docs com as cenas que faltam fazer
+https://docs.google.com/document/d/1BQLJMznzsFkIlPDLVhzw1IawNizXdjiI4bRkByRUtFU/edit?usp=sharing
+
+
+
 i talk indian now
 
 what to do
