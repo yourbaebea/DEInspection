@@ -1,16 +1,12 @@
 package com.example.deinspection.activities
 
-import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.example.deinspection.CAR_NUMBER
+import com.example.deinspection.ATTRIBUTE
 import com.example.deinspection.R
+
 import kotlinx.android.synthetic.main.activity_main_menu.*
-import kotlinx.android.synthetic.main.activity_settings.*
-import java.text.SimpleDateFormat
-import java.util.*
 
 class MainMenuActivity : AppCompatActivity() {
     var value: Int = 0
@@ -50,7 +46,7 @@ class MainMenuActivity : AppCompatActivity() {
             //value = size of list of cars
             var value: Int = 3
             //TEMPORARIO
-            intent.putExtra(CAR_NUMBER, value)
+            intent.putExtra(ATTRIBUTE, value)
             //intent.putExtra(CAR_LIST, list)
             // send the list of all the cars, for us to add
             startActivity(intent)
@@ -72,7 +68,7 @@ class MainMenuActivity : AppCompatActivity() {
             //value = size of list of cars
             val value: Int = 3
             //TEMPORARIO
-            intent.putExtra(CAR_NUMBER, value)
+            intent.putExtra(ATTRIBUTE, value)
             //intent.putExtra(CAR_LIST, list)
             // send the list of all the cars, for us to add
             startActivity(intent)
@@ -86,7 +82,7 @@ class MainMenuActivity : AppCompatActivity() {
 
         // check if value == 1, thats an error
         val intent = Intent(this, CarActivity::class.java)
-        intent.putExtra(CAR_NUMBER, value)
+        intent.putExtra(ATTRIBUTE, value)
         //intent.putExtra(CAR_LIST, list)
         // send the list of all the cars
         startActivity(intent)

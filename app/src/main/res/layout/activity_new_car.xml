@@ -13,10 +13,11 @@
         android:layout_width="145dp"
         android:layout_height="67dp"
         android:layout_marginTop="24dp"
-        android:drawableLeft="@drawable/arrowback"
+        android:background="@color/black"
+        android:drawableLeft="@drawable/ic_arrowback"
         android:text="Back"
         android:textColor="#000000"
-        app:backgroundTint="#00FFFFFF"
+        app:backgroundTint="#00591010"
         app:layout_constraintBottom_toTopOf="@+id/DEInspection"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
@@ -104,33 +105,7 @@
                     android:ems="10"
                     android:fontFamily="@font/comfortaa"
                     android:inputType="textPersonName"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="92dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="44dp"
-                    android:layout_marginLeft="44dp"
-                    android:fontFamily="@font/comfortaa"
-                    android:text="Data:"
-                    android:textColor="#000000"
-                    android:textSize="24sp" />
-
-                <EditText
-                    android:id="@+id/editTextDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="65dp"
-                    android:ems="10"
-                    android:fontFamily="@font/comfortaa"
-                    android:inputType="date"
+                    android:hint="modelo do carro"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -155,8 +130,44 @@
                     android:layout_height="65dp"
                     android:ems="10"
                     android:fontFamily="@font/comfortaa"
-                    android:inputType="date"
+                    android:inputType="none"
+                    android:hint="matricula AA00AA"
                     android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginLeft="44dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Data:"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/editMonth"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="mes" />
+
+                <EditText
+                    android:id="@+id/editYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="ano" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -182,6 +193,7 @@
                     android:ems="10"
                     android:fontFamily="@font/comfortaa"
                     android:inputType="textPersonName"
+                    android:hint="marca do carro"
                     android:textSize="18sp" />
 
             </LinearLayout>

@@ -13,7 +13,7 @@
         android:layout_width="145dp"
         android:layout_height="67dp"
         android:layout_marginTop="24dp"
-        android:drawableLeft="@drawable/arrowback"
+        android:drawableLeft="@drawable/ic_arrowback"
         android:text="Back"
         android:textColor="#000000"
         app:backgroundTint="#00FFFFFF"
@@ -28,7 +28,7 @@
         android:id="@+id/setAlarm"
         android:layout_width="253dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="176dp"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
         android:text="@string/selecione_os_lembretes_que_deseja"
@@ -42,7 +42,7 @@
         android:id="@+id/DEInspection"
         android:layout_width="253dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="@string/deinspection"
         android:textColor="#000000"
@@ -79,7 +79,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnNext2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.89">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,27 +88,31 @@
             android:orientation="vertical">
 
             <CheckBox
-                android:id="@+id/oil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/mudan_a_do_leo" />
-
-            <CheckBox
                 android:id="@+id/inspection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/pr_xima_inspe_o" />
+                android:text="@string/pr_xima_inspe_o"
+                android:checked="true" />
 
             <CheckBox
                 android:id="@+id/stamp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="@string/renova_o_do_selo" />
+
+            <CheckBox
+                android:id="@+id/oil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mudan_a_do_leo"
+                android:checked="false" />
 
             <CheckBox
                 android:id="@+id/tirePressure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="false"
                 android:text="@string/press_o_dos_pneus" />
 
             <CheckBox
@@ -120,12 +125,14 @@
                 android:id="@+id/airFilters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="false"
                 android:text="@string/mudan_a_dos_filtos_de_ar" />
 
             <CheckBox
                 android:id="@+id/windowCleaner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="false"
                 android:text="@string/mudan_a_do_liquido_limpeza_de_vidros" />
 
             <EditText
@@ -133,9 +140,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:text="@string/inserir_lembrete_personalizado"
-                android:importantForAutofill="no" />
+                android:hint="@string/inserir_lembrete_personalizado" />
 
             <EditText
                 android:id="@+id/custom2"
@@ -144,7 +151,7 @@
                 android:ems="10"
                 android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:text="@string/inserir_lembrete_personalizado" />
+                android:hint="@string/inserir_lembrete_personalizado" />
 
         </LinearLayout>
     </ScrollView>

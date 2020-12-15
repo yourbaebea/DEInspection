@@ -9,15 +9,31 @@
 
     <!-- seeing the car reminders/progress next time here-->
 
+    <Button
+        android:id="@+id/btnBackC"
+        android:layout_width="145dp"
+        android:layout_height="67dp"
+        android:drawableLeft="@drawable/ic_arrowback"
+        android:text="Back"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/editCarBtn"
+        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="335dp"
         android:layout_height="477dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,7 +80,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="helpBtn"
                             android:text="@string/ajuda"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -85,7 +100,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="infoBtn"
                             android:text="@string/info"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -106,7 +120,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="updateBtn"
                             android:text="@string/atualizar"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -168,7 +181,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="helpBtn"
                             android:text="@string/ajuda"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -189,7 +201,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="infoBtn"
                             android:text="@string/info"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -210,7 +221,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="updateBtn"
                             android:text="@string/atualizar"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -271,7 +281,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="helpBtn"
                             android:text="@string/ajuda"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -292,7 +301,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="infoBtn"
                             android:text="@string/info"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -313,7 +321,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="updateBtn"
                             android:text="@string/atualizar"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -374,7 +381,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="helpBtn"
                             android:text="@string/ajuda"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -395,7 +401,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="infoBtn"
                             android:text="@string/info"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -416,7 +421,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="updateBtn"
                             android:text="@string/atualizar"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -477,7 +481,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="helpBtn"
                             android:text="@string/ajuda"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -498,7 +501,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="infoBtn"
                             android:text="@string/info"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -519,7 +521,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="updateBtn"
                             android:text="@string/atualizar"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -565,7 +566,7 @@
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
-                            android:layout_height="68dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/attr1" />
 
                     </LinearLayout>
@@ -580,7 +581,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="helpBtn"
                             android:text="@string/ajuda"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -601,7 +601,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="infoBtn"
                             android:text="@string/info"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -622,7 +621,6 @@
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
-                            android:onClick="updateBtn"
                             android:text="@string/atualizar"
                             android:textColor="#000000"
                             android:textColorHighlight="#00FFFFFF"
@@ -630,12 +628,6 @@
                             android:textSize="12sp"
                             app:backgroundTint="#00FFFFFF"
                             app:iconTint="#00FFFFFF"
-                            app:layout_constraintBottom_toTopOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.495"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/DEInspection"
-                            app:layout_constraintVertical_bias="0.524"
                             app:rippleColor="#00FFFFFF" />
 
                     </LinearLayout>
@@ -649,37 +641,51 @@
 
     <Button
         android:id="@+id/buttonInspection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="82dp"
         android:text="@string/mais_sobre_inspecao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="214dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="176dp"
+        android:layout_height="41dp"
         android:text="@string/proximainspecao"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa"
-        android:text="Car brand model matricula"
+        android:text="@string/car_brand_model_matricula"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.877" />
+
+    <Button
+        android:id="@+id/editCarBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_car_button"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.49" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

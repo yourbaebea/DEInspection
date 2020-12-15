@@ -1,61 +1,123 @@
 package com.example.deinspection.activities
 
+import android.app.AlertDialog
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.SeekBar
-import androidx.annotation.RequiresApi
-import com.example.deinspection.CAR_NUMBER
+import android.widget.Toast
+import com.example.deinspection.ATTRIBUTE
 import com.example.deinspection.R
+import com.example.deinspection.classes.Car
+import kotlinx.android.synthetic.main.activity_new_car_2.*
 import kotlinx.android.synthetic.main.activity_new_car_3.*
 
 class NewCar3Activity : AppCompatActivity() {
+    var car= Car()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_car_3)
 
+        // if the car already exists, we fill it with the info we already have
+        // FOR THE LOVE OF GOD IGNORE THIS SIMPLIFICATION
+        // O CARRO NAO VAI SER SEMPRE VAZIO ELE APENAS ESTÁ VAZIO PORQUE ELE FOI DEFINIDO NA LINHA 19
+        if (car != null) filledAlready()
 
 
-        btnBackNC3.setOnClickListener() {
+        btnBackAL.setOnClickListener() {
 
             //pop up
             //do you want to leave without saving?
+            val dialog: AlertDialog = AlertDialog.Builder(this)
+                    .setTitle("DEInspection")
+                    .setMessage("Pretende sair sem guardar?")
+                    .setPositiveButton("Sair", null)
+                    .setNegativeButton("Guardar e sair", null)
+                    .setNeutralButton("Cancelar", null)
+                    .show()
+            val positiveButton: Button = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+            val negativeButton: Button = dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+            val neutralButton: Button = dialog.getButton(AlertDialog.BUTTON_NEUTRAL)
 
-
-
-            //save definitions
-            val intent = Intent(this, NewCarActivity::class.java)
-            //send only check options to set definitions
-            startActivity(intent)
-
+            //leave without saving
+            positiveButton.setOnClickListener() {
+                dialog.dismiss()
+                goBack()
+            }
+            // save and then leave
+            negativeButton.setOnClickListener() {
+                //save info
+                saveInfo()
+                Toast.makeText(this@NewCar3Activity, "Saving info", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+                goBack()
+            }
+            //cancel and continue on this page
+            neutralButton.setOnClickListener() {
+                dialog.dismiss()
+            }
         }
 
 
-        btnNext3.setOnClickListener(){
-            //save all seekbar info, dates etc
-            //car.updateReminder("oil", seekbaroil.progress)
-            //for all the attributes
+        btnNext3.setOnClickListener() {
+            saveInfo()
 
-            //we should get this from the array of cars
-            //this is car number = number
-            var number= 1
+            var number = 1
 
             val intent = Intent(this, CarActivity::class.java)
-            intent.putExtra(CAR_NUMBER, number)
+            intent.putExtra(ATTRIBUTE, number)
             //intent.putExtra(CAR_LIST, list)
             // send the list of all the cars
             startActivity(intent)
         }
+
+    }
+
+
+    fun filledAlready() {
+
+        seekBar.progress= car.oil.reminder
+        seekBar2.progress= car.inspection.reminder
+        seekBar3.progress= car.stamp.reminder
+        seekBar4.progress= car.tirePressure.reminder
+        seekBar5.progress= car.tires.reminder
+        seekBar6.progress = car.airFilters.reminder
+        seekBar7.progress = car.windowCleaner.reminder
+        seekBar8.progress = car.custom.reminder
+        seekBar9.progress = car.custom2.reminder
+
+        seekBar.progress= 10
+        seekBar2.progress= 1
     }
 
 
-    fun updateSeekBarTV() {
 
+    //save all the info in this page
+    fun saveInfo(){
+        car.oil.reminder= seekBar.progress
+        car.inspection.reminder = seekBar2.progress
+        car.stamp.reminder =  seekBar3.progress
+        car.tirePressure.reminder= seekBar4.progress
+        car.tires.reminder= seekBar5.progress
+        car.airFilters.reminder = seekBar6.progress
+        car.windowCleaner.reminder = seekBar7.progress
+        car.custom.reminder= seekBar8.progress
+        car.custom2.reminder = seekBar9.progress
     }
+
+
+    //where the back button goes to
+    fun goBack(){
+        val intent = Intent(this, NewCar2Activity::class.java)
+        startActivity(intent)
+    }
+
+
+
+
 
 
     fun editTV(value: Int): String {
@@ -181,6 +243,8 @@ class NewCar3Activity : AppCompatActivity() {
 
         }
     */
+
+
 
 }
 
