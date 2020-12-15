@@ -15,7 +15,6 @@ import androidx.annotation.RequiresApi
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
 import kotlinx.android.synthetic.main.activity_new_car.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 
