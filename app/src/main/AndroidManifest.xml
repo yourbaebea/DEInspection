@@ -24,7 +24,6 @@
         <activity android:name=".activities.CarDetailsHelpActivity" />
         <activity android:name=".activities.CarDetailsInfoActivity" />
         <activity android:name=".activities.SettingsActivity" />
-        <activity android:name=".PopUpWindow" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".activities.InspectionActivity" />
     </application>

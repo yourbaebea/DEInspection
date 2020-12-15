@@ -14,7 +14,7 @@
         android:layout_height="67dp"
         android:layout_marginTop="24dp"
         android:background="@color/black"
-        android:drawableLeft="@drawable/arrowback"
+        android:drawableLeft="@drawable/ic_arrowback"
         android:text="Back"
         android:textColor="#000000"
         app:backgroundTint="#00591010"
@@ -23,8 +23,7 @@
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19"
-        android:drawableStart="@drawable/arrowback" />
+        app:layout_constraintVertical_bias="0.19" />
 
     <TextView
         android:id="@+id/DEInspection"
@@ -106,6 +105,7 @@
                     android:ems="10"
                     android:fontFamily="@font/comfortaa"
                     android:inputType="textPersonName"
+                    android:hint="modelo do carro"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -131,6 +131,7 @@
                     android:ems="10"
                     android:fontFamily="@font/comfortaa"
                     android:inputType="none"
+                    android:hint="matricula AA00AA"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -156,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="number"
-                    android:text="Mes" />
+                    android:hint="mes" />
 
                 <EditText
                     android:id="@+id/editYear"
@@ -165,7 +166,7 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number"
-                    android:text="ano" />
+                    android:hint="ano" />
 
             </LinearLayout>
 
@@ -192,6 +193,7 @@
                     android:ems="10"
                     android:fontFamily="@font/comfortaa"
                     android:inputType="textPersonName"
+                    android:hint="marca do carro"
                     android:textSize="18sp" />
 
             </LinearLayout>

@@ -1,25 +1,26 @@
 package com.example.deinspection.activities
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.deinspection.R
 import kotlinx.android.synthetic.main.activity_settings.*
-
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
-import androidx.core.graphics.ColorUtils
-
-
+import android.widget.Button
+import android.widget.Toast
 
 import java.text.SimpleDateFormat
 import java.util.*
@@ -47,13 +48,18 @@ class SettingsActivity : AppCompatActivity() {
                 timeTv.text = SimpleDateFormat("HH:mm", Locale.getDefault()).format(cal.time)
                 hours = cal.get(Calendar.HOUR_OF_DAY)
                 minutes= cal.get(Calendar.MINUTE)
+                //
+                // save the time the alarms go off on a global var
+                //
             }
             TimePickerDialog(this, timeSet, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
 
-
-
-
+        //no pop up, the only info changed in this page is the button to change the time the alarms go off
+        btnBack.setOnClickListener() {
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+        }
 
 
 

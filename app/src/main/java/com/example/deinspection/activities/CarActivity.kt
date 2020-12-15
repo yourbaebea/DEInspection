@@ -78,6 +78,16 @@ class CarActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //no pop up, the only info changed in this page is the button to change the time the alarms go off
+        btnBackC.setOnClickListener() {
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        editCarBtn.setOnClickListener() {
+            val intent = Intent(this, NewCarActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun helpBtn(view: View){
@@ -131,6 +141,9 @@ class CarActivity : AppCompatActivity() {
 
 
     }
+
+
+
 
 
 

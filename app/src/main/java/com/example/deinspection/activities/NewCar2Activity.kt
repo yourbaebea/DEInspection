@@ -9,18 +9,25 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
+import kotlinx.android.synthetic.main.activity_new_car.*
 import kotlinx.android.synthetic.main.activity_new_car_2.*
+import java.util.*
 
 
 class NewCar2Activity : AppCompatActivity() {
+    var car = Car()
     override fun onCreate(savedInstanceState: Bundle?) {
-        var car = Car()
+
         // idk how to do this uwu
         //this should be the global var to use and update
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_car_2)
 
+        // if the car already exists, we fill it with the info we already have
+        // FOR THE LOVE OF GOD IGNORE THIS SIMPLIFICATION
+        // O CARRO NAO VAI SER SEMPRE VAZIO ELE APENAS ESTÁ VAZIO PORQUE ELE FOI DEFINIDO NA LINHA 19
+        if (car !=null) filledAlready()
 
         //every back button when editing should have a popup making sure
         btnBackNC2.setOnClickListener() {
@@ -45,7 +52,7 @@ class NewCar2Activity : AppCompatActivity() {
             // save and then leave
             negativeButton.setOnClickListener() {
                     //save info
-                    saveInfo(car)
+                    saveInfo()
                     Toast.makeText(this@NewCar2Activity, "Saving info", Toast.LENGTH_SHORT).show()
                     dialog.dismiss()
                     goBack()
@@ -59,7 +66,7 @@ class NewCar2Activity : AppCompatActivity() {
 
         btnNext2.setOnClickListener(){
             //save definitions
-            saveInfo(car)
+            saveInfo()
 
             val intent = Intent(this, NewCar3Activity::class.java)
             //send only check options to set definitions
@@ -78,7 +85,7 @@ class NewCar2Activity : AppCompatActivity() {
     }
 
     //save all the info in this page
-    fun saveInfo(car: Car){
+    fun saveInfo(){
 
         car.oil.selected = oil.isChecked
         car.inspection.selected= inspection.isChecked
@@ -102,6 +109,22 @@ class NewCar2Activity : AppCompatActivity() {
     }
 
 
+    fun filledAlready(){
+        oil.isChecked =car.oil.selected
+        inspection.isChecked = car.inspection.selected
+        stamp.isChecked= car.stamp.selected
+        tirePressure.isChecked= car.tirePressure.selected
+        tires.isChecked = car.tires.selected
+        airFilters.isChecked = car.airFilters.selected
+        windowCleaner.isChecked= car.windowCleaner.selected
+
+        if (car.custom.selected)
+            custom.setText(car.custom.title)
+
+        if (car.custom2.selected)
+            custom.setText(car.custom2.title)
+
+    }
 
 
 }

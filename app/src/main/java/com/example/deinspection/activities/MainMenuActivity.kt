@@ -1,18 +1,12 @@
 package com.example.deinspection.activities
 
-import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.example.deinspection.CAR_NUMBER
-import com.example.deinspection.PopUpWindow
 import com.example.deinspection.R
 
 import kotlinx.android.synthetic.main.activity_main_menu.*
-
-import java.text.SimpleDateFormat
-import java.util.*
 
 class MainMenuActivity : AppCompatActivity() {
     var value: Int = 0
@@ -23,17 +17,8 @@ class MainMenuActivity : AppCompatActivity() {
         btnCar1.setOnClickListener() {
             seeCar(1)
         }
-        //btnCar2.setOnClickListener() {
-            //seeCar(2)
-            btnCar2.setOnClickListener {
-                val intent = Intent(this, PopUpWindow::class.java)
-                intent.putExtra("popuptitle", "Error")
-                intent.putExtra("popuptext", "Sorry, that email address is already used!")
-                intent.putExtra("popupbtn", "OK")
-                intent.putExtra("darkstatusbar", false)
-                startActivity(intent)
-
-
+        btnCar2.setOnClickListener() {
+            seeCar(2)
         }
         btnCar3.setOnClickListener() {
             seeCar(3)

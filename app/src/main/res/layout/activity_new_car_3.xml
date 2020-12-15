@@ -13,7 +13,7 @@
         android:layout_width="145dp"
         android:layout_height="67dp"
         android:layout_marginTop="24dp"
-        android:drawableLeft="@drawable/arrowback"
+        android:drawableLeft="@drawable/ic_arrowback"
         android:text="Back"
         android:textColor="#000000"
         app:backgroundTint="#00FFFFFF"
@@ -93,21 +93,6 @@
 
 
             <TextView
-                android:id="@+id/attribute1"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:fontFamily="@font/comfortaa"
-                android:gravity="center"
-                android:text="@string/mudan_a_do_leo"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-
-            <SeekBar
-                android:id="@+id/seekBar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
-
-            <TextView
                 android:id="@+id/attribute2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -136,6 +121,22 @@
                 android:id="@+id/seekBar3"
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
+
+            <TextView
+                android:id="@+id/attribute1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="@string/mudan_a_do_leo"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                />
 
             <TextView
                 android:id="@+id/attribute4"
