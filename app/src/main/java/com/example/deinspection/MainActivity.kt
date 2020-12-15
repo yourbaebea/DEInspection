@@ -8,11 +8,14 @@ import com.example.deinspection.activities.MainMenuActivity
 
 
 import kotlinx.android.synthetic.main.activity_init_app.*
+import com.example.deinspection.classes.*
 
 const val ATTRIBUTE = "attribute"
 
 class MainActivity : AppCompatActivity() {
-
+    companion object {
+        val carList: MutableList<Car> = ArrayList()
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
