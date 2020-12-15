@@ -42,18 +42,9 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnMoreAbout"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="@string/mais_sobre_deinspection"
-            android:textColor="#000000"
-            app:backgroundTint="@color/background"
-            app:iconTint="#000000" />
-
-        <Button
             android:id="@+id/btnInstagram"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:text="@string/instagram"
             android:textColor="#000000"
             app:backgroundTint="@color/background"
@@ -62,7 +53,7 @@
         <Button
             android:id="@+id/btnFacebook"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:text="@string/facebook"
             android:textColor="#000000"
             app:backgroundTint="@color/background"
@@ -71,17 +62,35 @@
         <Button
             android:id="@+id/btnFeedback"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:text="@string/feedback_deixe_nos_a_sua_opiniao"
             android:textColor="#000000"
             app:backgroundTint="@color/background"
             app:iconTint="#000000" />
 
         <Button
-            android:id="@+id/btnFeedback2"
+            android:id="@+id/btnMoreAbout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
+            android:text="Aviso Legal"
+            android:textColor="#000000"
+            app:backgroundTint="@color/background"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btnError"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:text="@string/reportar_erro"
+            android:textColor="#000000"
+            app:backgroundTint="@color/background"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="Eliminar tudo!"
             android:textColor="#000000"
             app:backgroundTint="@color/background"
             app:iconTint="#000000" />
@@ -92,8 +101,7 @@
         android:id="@+id/btnBack"
         android:layout_width="145dp"
         android:layout_height="67dp"
-        android:layout_marginBottom="27dp"
-        android:drawableLeft="@drawable/arrowback"
+        android:drawableLeft="@drawable/ic_arrowback"
         android:text="Back"
         android:textColor="#000000"
         app:backgroundTint="#00FFFFFF"
@@ -102,6 +110,6 @@
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.592" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

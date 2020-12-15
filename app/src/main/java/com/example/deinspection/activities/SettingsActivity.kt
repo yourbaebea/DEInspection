@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.deinspection.R
 import kotlinx.android.synthetic.main.activity_settings.*
+import kotlinx.android.synthetic.main.activity_more_info.*
+
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ArgbEvaluator
@@ -21,6 +23,7 @@ import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
 import android.widget.Button
 import android.widget.Toast
+import com.example.deinspection.MainActivity
 
 import java.text.SimpleDateFormat
 import java.util.*
@@ -60,6 +63,63 @@ class SettingsActivity : AppCompatActivity() {
             val intent = Intent(this, MainMenuActivity::class.java)
             startActivity(intent)
         }
+
+        btnInstagram.setOnClickListener(){
+            //open instagram or something
+        }
+
+        btnFacebook.setOnClickListener(){
+            //open facebook or something
+        }
+
+        btnFeedback.setOnClickListener(){
+            //open google play rating
+            //or form?
+            // i would ratter go to google play!!
+        }
+
+        btnMoreAbout.setOnClickListener(){
+            setContentView(R.layout.activity_more_info)
+
+        }
+
+        btnBackAL.setOnClickListener(){
+            setContentView(R.layout.activity_settings)
+        }
+
+        btnError.setOnClickListener(){
+            //open our email or report error in google play idk something or delete this button
+        }
+
+        btnReset.setOnClickListener() {
+            //pop up
+            //do you want to leave without saving?
+            val dialog: AlertDialog = AlertDialog.Builder(this)
+                    .setTitle("DEInspection")
+                    .setMessage("Pretende eliminar tudo e reininciar a app?")
+                    .setPositiveButton("Sim", null)
+                    .setNegativeButton("Cancelar", null)
+                    .show()
+            val positiveButton: Button = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+            val negativeButton: Button = dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+
+            //reset
+            positiveButton.setOnClickListener() {
+                dialog.dismiss()
+                //dele all cars,and reset application
+                //goes to the initial activity
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+            }
+            // cancel
+            negativeButton.setOnClickListener() {
+                dialog.dismiss()
+            }
+        }
+
+
+
 
 
 

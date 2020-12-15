@@ -12,7 +12,7 @@
         android:layout_height="67dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="27dp"
-        android:drawableLeft="@drawable/arrowback"
+        android:drawableLeft="@drawable/ic_arrowback"
         android:text="Back"
         android:textColor="#000000"
         app:backgroundTint="#00FFFFFF"

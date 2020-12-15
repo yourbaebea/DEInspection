@@ -98,7 +98,7 @@ class NewCarActivity : AppCompatActivity() {
     private fun goBack(){
         //save definitions
         val intent = Intent(this, NewCarActivity::class.java)
-        //send only check options to set definitions
+
         startActivity(intent)
     }
 

@@ -40,5 +40,7 @@
     <string name="facebook">Facebook</string>
     <string name="feedback_deixe_nos_a_sua_opiniao">Feedback- deixe-nos a sua opiniao!</string>
     <string name="reportar_erro">Reportar erro</string>
+    <string name="edit_car_button">edit car button</string>
+    <string name="car_brand_model_matricula">Car brand model matricula</string>
 
 </resources>

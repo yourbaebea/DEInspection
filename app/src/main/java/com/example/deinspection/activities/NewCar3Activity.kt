@@ -2,18 +2,14 @@ package com.example.deinspection.activities
 
 import android.app.AlertDialog
 import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat.startActivity
-import com.example.deinspection.CAR_NUMBER
+import com.example.deinspection.ATTRIBUTE
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
 import kotlinx.android.synthetic.main.activity_new_car_2.*
@@ -31,7 +27,7 @@ class NewCar3Activity : AppCompatActivity() {
         if (car != null) filledAlready()
 
 
-        btnBackNC3.setOnClickListener() {
+        btnBackAL.setOnClickListener() {
 
             //pop up
             //do you want to leave without saving?
@@ -72,7 +68,7 @@ class NewCar3Activity : AppCompatActivity() {
             var number = 1
 
             val intent = Intent(this, CarActivity::class.java)
-            intent.putExtra(CAR_NUMBER, number)
+            intent.putExtra(ATTRIBUTE, number)
             //intent.putExtra(CAR_LIST, list)
             // send the list of all the cars
             startActivity(intent)

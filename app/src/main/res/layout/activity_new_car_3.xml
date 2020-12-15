@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/btnBackNC3"
+        android:id="@+id/btnBackAL"
         android:layout_width="145dp"
         android:layout_height="67dp"
         android:layout_marginTop="24dp"

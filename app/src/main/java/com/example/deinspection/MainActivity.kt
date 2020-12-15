@@ -9,7 +9,7 @@ import com.example.deinspection.activities.MainMenuActivity
 
 import kotlinx.android.synthetic.main.activity_init_app.*
 
-const val CAR_NUMBER = "com.example.deinspection.CAR"
+const val ATTRIBUTE = "attribute"
 
 class MainActivity : AppCompatActivity() {
 
