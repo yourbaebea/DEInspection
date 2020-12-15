@@ -5,8 +5,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.deinspection.MainActivity.Companion.carList
 import com.example.deinspection.R
+import com.example.deinspection.classes.Car
 import kotlinx.android.synthetic.main.activity_new_car.*
+import java.io.Serializable
+import java.util.*
 
 
 class NewCarActivity : AppCompatActivity() {
@@ -36,6 +40,15 @@ class NewCarActivity : AppCompatActivity() {
         val matricula = editTextMatricula.text.toString()//
 
         setContentView(R.layout.activity_new_car_2)
+        val car = Car()
+        car.brand = marca
+        car.model = modelo
+        car.date = dateParse(data)
+        //car.stamp = matricula // how the **** do I turn this shit into an inner class object like that one
+        val intent = Intent(this@NewCarActivity,NewCar2Activity::class.java)
+        intent.putExtra("Car",car)
+
+        carList.add(car)
 
     }
 
@@ -48,5 +61,30 @@ class NewCarActivity : AppCompatActivity() {
 
     }
 
+    fun dateParse(date: String): Date {
+        /* Date parser by / or - spliter that work with both dd/MM/yyyy and yyyy/MM/dd */
+        val parsed = date.split('/','-')
+        var year = 0
+        val month = parsed[1].toInt()
+        var day = 0
+        for(number in parsed){
+            var count = 1
+            if (number.length == 4) {
+                year = number.toInt()
+                if (count == 1) {
+
+                    day =   parsed[2].toInt()
+                }
+                else {
+
+                    day =   parsed[0].toInt()
+                }
+
+
+            }
+            count += 1
+        }
+        return Date(year,month,day)
+    }
 
 }

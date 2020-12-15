@@ -2,12 +2,14 @@ package com.example.deinspection.classes
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import java.io.Serializable
+import java.text.SimpleDateFormat
 import java.time.Duration
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class Car {
+open class Car : Serializable {
 
     /*
         on buttons related to the car or attributes
@@ -26,7 +28,7 @@ class Car {
 
     var brand: String = ""
     var model: String = ""
-    var date: Calendar? = null
+    var date: Date? = null
     var oil = Attribute()
     var inspection = Attribute()
     var stamp = Attribute()
@@ -41,7 +43,7 @@ class Car {
     var attr = ArrayList<Attribute>()
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun init(b: String, m: String, d: Calendar) {
+    fun init(b: String, m: String, d: Date) {
         this.brand = b
         this.model = m
         this.date = d
@@ -79,19 +81,21 @@ class Car {
     @RequiresApi(Build.VERSION_CODES.O)
     fun updateCheck(n:String){
         var aux = Attribute()
-        if (n == "oil") aux= this.oil
-        if (n == "inspection") aux= this.inspection
-        if (n == "stamp") aux= this.stamp
-        if (n == "tirePressure") aux= this.tirePressure
-        if (n == "tires") aux= this.tires
-        if (n == "airFilters") aux= this.airFilters
-        if (n == "windowCleaner") aux= this.windowCleaner
-        if (n == "custom") aux= this.custom
-        if (n == "custom2") aux= this.custom2
+        when(n){
+        "oil"  -> aux= this.oil
+         "inspection" -> aux= this.inspection
+        "stamp" -> aux= this.stamp
+        "tirePressure" -> aux= this.tirePressure
+        "tires" -> aux= this.tires
+        "airFilters" -> aux= this.airFilters
+        "windowCleaner" -> aux= this.windowCleaner
+        "custom" ->aux= this.custom
+        "custom2" -> aux= this.custom2
+        }
         aux.updateDate()
     }
 
-    inner class Attribute {
+    inner class Attribute: Serializable {
         var selected: Boolean =false
         var checkcounter: Int = 0
         var lastdate: Calendar? = null
@@ -145,6 +149,9 @@ class Car {
             if (aux2==1) return "$aux day"
             return "$aux2 days"
         }
+
+
+
     }
 
 }

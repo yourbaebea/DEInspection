@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import com.example.deinspection.CAR_NUMBER
+import com.example.deinspection.MainActivity.Companion.carList
 import com.example.deinspection.R
+import com.example.deinspection.classes.Car
 
 class NewCar2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +19,7 @@ class NewCar2Activity : AppCompatActivity() {
         setContentView(R.layout.activity_new_car_3)
         //seekBar()
 
-       //var car = Car()
+       //val car = Car()
         // idk how to do this uwu
     }
 
@@ -25,9 +27,10 @@ class NewCar2Activity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun finishButton(view: View){
     //save all seekbar info, dates etc
+        val car = intent.extras?.get("Car") as Car
         //car.updateReminder("oil", seekbaroil.progress)
         //for all the attributes
-
+        carList.add(car)  // not sure if we should save it in this Activity or Last one
         //we should get this from the array of cars
         //this is car number = number
         var number= 1

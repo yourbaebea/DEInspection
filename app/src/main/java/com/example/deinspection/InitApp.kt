@@ -9,11 +9,14 @@ import com.example.deinspection.activities.MainMenuActivity
 import com.example.deinspection.activities.NewCarActivity
 
 import kotlinx.android.synthetic.main.activity_init_app.*
+import com.example.deinspection.classes.*
 
 const val CAR_NUMBER = "com.example.deinspection.CAR"
 
 class MainActivity : AppCompatActivity() {
-
+    companion object {
+        val carList: MutableList<Car> = ArrayList()
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

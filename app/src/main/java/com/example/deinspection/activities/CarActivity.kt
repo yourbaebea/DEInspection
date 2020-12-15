@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.deinspection.R
+import java.util.*
 
 class CarActivity : AppCompatActivity() {
     var car : Int ? = 0
@@ -66,7 +67,6 @@ class CarActivity : AppCompatActivity() {
 
 
     }
-
 
 
 
