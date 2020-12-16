@@ -17,6 +17,9 @@ class CarDetailsHelpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car_details_help)
 
+        //get the intent extra from caractivity
+        // the id is the text we have to get
+        // texto informativo sobre o atributo
 
         updateProgressBar()
     }

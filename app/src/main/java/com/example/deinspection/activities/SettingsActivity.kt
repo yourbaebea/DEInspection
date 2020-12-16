@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.deinspection.R
 import kotlinx.android.synthetic.main.activity_settings.*
-import kotlinx.android.synthetic.main.activity_more_info.*
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -89,12 +88,9 @@ class SettingsActivity : AppCompatActivity() {
 
         }
 
-        btnBackAL.setOnClickListener(){
+        btnBack.setOnClickListener(){
             val intent = Intent(this, MainMenuActivity::class.java)
 
-            // save the car and the attribute
-            // var car = 1, attr="oil"
-            //something like that
 
             startActivity(intent)
         }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:windowSoftInputMode="adjustNothing"
     tools:context=".activities.NewCarActivity">
 
 
@@ -29,13 +30,12 @@
         android:id="@+id/DEInspection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="@string/deinspection"
         android:textColor="#000000"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.607"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +43,7 @@
         android:id="@+id/DEInspection2"
         android:layout_width="339dp"
         android:layout_height="100dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
         android:text="Insira as informações sobre o seu carro"
@@ -51,10 +51,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/DEInspection" />
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btnNextNC"
         android:layout_width="218dp"
         android:layout_height="73dp"
         android:layout_marginBottom="52dp"
@@ -71,7 +71,7 @@
     <ScrollView
         android:layout_width="392dp"
         android:layout_height="246dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintBottom_toTopOf="@+id/btnNextNC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DEInspection2"

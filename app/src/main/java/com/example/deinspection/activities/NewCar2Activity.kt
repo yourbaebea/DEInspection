@@ -87,7 +87,7 @@ class NewCar2Activity : AppCompatActivity() {
     //save all the info in this page
     fun saveInfo(){
         //save all seekbar info, dates etc
-        val car = intent.extras?.get("Car") as Car
+        //val car = intent.extras?.get("Car") as Car
 
         carList.add(car)  // not sure if we should save it in this Activity or Last one
         //we should get this from the array of cars

@@ -2,22 +2,19 @@
 package com.example.deinspection.activities
 
 import android.app.AlertDialog
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.example.deinspection.MainActivity
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
 import kotlinx.android.synthetic.main.activity_new_car.*
 import com.example.deinspection.MainActivity.Companion.carList
 import java.util.*
-import java.io.Serializable
 
 
 class NewCarActivity : AppCompatActivity() {
@@ -82,13 +79,16 @@ class NewCarActivity : AppCompatActivity() {
             }
         }
 
-        btnNext.setOnClickListener() {
+        btnNextNC.setOnClickListener() {
             //save definitions
+            //this has an error for the date
             accepted= saveInfo(car)
+            //justo for tests we are gonna accept all
+            accepted= true
             if (accepted) {
                 val intent = Intent(this, NewCar2Activity::class.java)
                 //send only check options to set definitions
-                intent.putExtra("Car",car)
+                //intent.putExtra("Car",car)
                 startActivity(intent)
             }
             else {
@@ -105,7 +105,7 @@ class NewCarActivity : AppCompatActivity() {
     //where the back button goes to
     private fun goBack(){
         //save definitions
-        val intent = Intent(this, NewCarActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 
@@ -119,8 +119,8 @@ class NewCarActivity : AppCompatActivity() {
 
         val marca = editCarBrand.text.toString()
         val modelo = editCarModel.text.toString()
-        val mes = editMonth.text.toString().toInt()
-        val ano= editYear.text.toString().toInt()
+        val mesaux = editMonth.text.toString()
+        val anoaux= editYear.text.toString()
         val matricula = editTextMatricula.text.toString()
 
         val confirmation= matricula.chunked(2)
@@ -139,15 +139,26 @@ class NewCarActivity : AppCompatActivity() {
         }
         else return false
 
+        var mes = 0
+        var ano = 0
+        try{
+            mes= mesaux.toInt()
+            ano= mesaux.toInt()
+        }catch(e: NumberFormatException){ // handle your exception
+            mes=0
+            ano=0
+        }
 
-        when (ano) {!in 1900..2022 -> return false}
+        //if(mesaux !="") mes= mesaux.toInt()
+        //if(anoaux !="") mes= mesaux.toInt()
+
+        when (ano) {!in 1900..2022 -> return false }
         when (mes) {!in 1..12 -> return false}
 
-        var data: Calendar = Calendar.getInstance()
+        val data: Calendar = Calendar.getInstance()
         data.set(Calendar.YEAR, ano)
         data.set(Calendar.MONTH, mes)
         data.set(Calendar.DAY_OF_MONTH, 1)
-
 
         car.init(marca,modelo,matricula,data)
         return true
