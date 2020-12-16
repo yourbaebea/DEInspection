@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.deinspection.ATTRIBUTE
 import com.example.deinspection.R
 
 class CarActivity : AppCompatActivity() {
@@ -11,6 +12,35 @@ class CarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car)
+
+        btnHelp1.setOnClickListener() {
+            seeCar(1)
+        }
+
+        btnInfo1.setOnClickListener() {
+            seeCar(1)
+        }
+
+        btnHelp2.setOnClickListener() {
+            seeCar(1)
+        }
+        
+        btnInfo2.setOnClickListener() {
+            seeCar(1)
+        }
+
+        btnHelp3.setOnClickListener() {
+            seeCar(1)
+        }
+        btnHelp4.setOnClickListener() {
+            seeCar(1)
+        }
+        btnHelp5.setOnClickListener() {
+            seeCar(1)
+        }
+        btnHelp6.setOnClickListener() {
+            seeCar(1)
+        }
 
 
     }

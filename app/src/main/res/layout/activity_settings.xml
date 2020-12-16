@@ -45,19 +45,21 @@
             android:id="@+id/btnInstagram"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:text="@string/instagram"
+            android:drawableLeft="@drawable/ic_instagram"
+            android:text="Instagram"
             android:textColor="#000000"
             app:backgroundTint="@color/background"
-            app:iconTint="#000000" />
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2" />
 
         <Button
             android:id="@+id/btnFacebook"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:text="@string/facebook"
+            android:drawableLeft="@drawable/ic_facebook"
+            android:text="Facebook"
             android:textColor="#000000"
             app:backgroundTint="@color/background"
-            app:iconTint="#000000" />
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2" />
 
         <Button
             android:id="@+id/btnFeedback"
