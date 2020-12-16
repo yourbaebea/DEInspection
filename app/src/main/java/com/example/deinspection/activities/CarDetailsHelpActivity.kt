@@ -9,8 +9,8 @@ import com.example.deinspection.R
 
 class CarDetailsHelpActivity : AppCompatActivity() {
 
-    private var progress_bar: ProgressBar = findViewById(R.id.progress_bar)
-    private var progress_text: TextView = findViewById(R.id.progress_text)
+    //private var progress_bar: ProgressBar = findViewById(R.id.progress_bar)
+   // private var progress_text: TextView = findViewById(R.id.progress_text)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +27,7 @@ class CarDetailsHelpActivity : AppCompatActivity() {
         var reminder: Int = 2
         var aux= ((26- reminder) *100)
 
-        progress_bar.progress = aux
-        progress_text.text = "$aux%"
+      //  progress_bar.progress = aux
+       // progress_text.text = "$aux%"
     }
 }

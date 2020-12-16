@@ -79,12 +79,24 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         btnMoreAbout.setOnClickListener(){
-            setContentView(R.layout.activity_more_info)
+            val intent = Intent(this, MoreAboutActivity::class.java)
+
+            // save the car and the attribute
+            // var car = 1, attr="oil"
+            //something like that
+
+            startActivity(intent)
 
         }
 
         btnBackAL.setOnClickListener(){
-            setContentView(R.layout.activity_settings)
+            val intent = Intent(this, MainMenuActivity::class.java)
+
+            // save the car and the attribute
+            // var car = 1, attr="oil"
+            //something like that
+
+            startActivity(intent)
         }
 
         btnError.setOnClickListener(){

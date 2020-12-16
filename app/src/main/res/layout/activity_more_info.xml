@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".activities.NewCarActivity">
+    tools:context=".activities.MoreAboutActivity">
 
     <Button
         android:id="@+id/btnBackAL"

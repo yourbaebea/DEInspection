@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.deinspection.ATTRIBUTE
 import com.example.deinspection.R
+import kotlinx.android.synthetic.main.activity_car.*
 
 class CarActivity : AppCompatActivity() {
     var car : Int ? = 0
@@ -14,38 +15,21 @@ class CarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_car)
 
         btnHelp1.setOnClickListener() {
-            seeCar(1)
+            helpBtn("oil")
         }
 
         btnInfo1.setOnClickListener() {
-            seeCar(1)
+            infoBtn("oil")
         }
 
-        btnHelp2.setOnClickListener() {
-            seeCar(1)
-        }
-        
-        btnInfo2.setOnClickListener() {
-            seeCar(1)
-        }
 
-        btnHelp3.setOnClickListener() {
-            seeCar(1)
-        }
-        btnHelp4.setOnClickListener() {
-            seeCar(1)
-        }
-        btnHelp5.setOnClickListener() {
-            seeCar(1)
-        }
-        btnHelp6.setOnClickListener() {
-            seeCar(1)
-        }
+
+
 
 
     }
 
-    fun helpBtn(view: View){
+    fun helpBtn(id: String){
         //val id : String = view.id.toString()
         //val i = id[-1].toInt() //this is the number of the attribute clicked
 
@@ -64,9 +48,9 @@ class CarActivity : AppCompatActivity() {
 
     }
 
-    fun infoBtn(view: View){
-        val id : String = view.id.toString()
-        val i = id[-1].toInt() //this is the number of the attribute clicked
+    fun infoBtn(id: String){
+        //val id : String = view.id.toString()
+        //val i = id[-1].toInt() //this is the number of the attribute clicked
 
 
         // check the attribute related to the click
