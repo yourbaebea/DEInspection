@@ -60,7 +60,7 @@ class CarActivity : AppCompatActivity() {
 
 
     // this for testing the alarms
-    /*
+/*
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,10 +79,15 @@ class CarActivity : AppCompatActivity() {
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, time, pendingIntent)
         Log.d("CarActivity", "Alarme enviado!")
+        Toast.makeText(
+                this@CarActivity,
+                "Funcionalidade indisponível de momento!\nEsteja atento às nossas redes sociais para quando for lançada!\n",
+                Toast.LENGTH_SHORT
+        ).show()
 
     }
+*/
 
-     */
 
     //function of all the listeners
     @RequiresApi(Build.VERSION_CODES.O)
@@ -389,6 +394,9 @@ class CarActivity : AppCompatActivity() {
         return Reminder() //empty reminder
 
     }
+
+
+
 
 
 

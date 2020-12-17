@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/app_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.DEInspection">
-        <activity android:name=".activities.CarActivity"></activity>
-        <activity android:name=".activities.NewCar3Activity" />
-        <activity android:name=".activities.MainMenuActivity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +23,12 @@
         <activity android:name=".activities.CarDetailsInfoActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.InspectionActivity" />
+        <activity android:name=".activities.CarActivity"/>
+        <activity android:name=".activities.NewCar3Activity" />
+        <activity android:name=".activities.MainMenuActivity" />
+
+
+        <receiver android:name=".MainActivity$Receiver" />
     </application>
 
 </manifest>

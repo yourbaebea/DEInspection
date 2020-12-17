@@ -9,6 +9,19 @@
     tools:context=".activities.NewCarActivity">
 
 
+    <TextView
+        android:id="@+id/DEInspection"
+        android:layout_width="253dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="@string/deinspection"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnBackNC2"
         android:layout_width="145dp"
@@ -20,35 +33,23 @@
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/DEInspection"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.648" />
 
     <TextView
         android:id="@+id/setAlarm"
-        android:layout_width="253dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_width="300dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="204dp"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
         android:text="@string/selecione_os_lembretes_que_deseja"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/DEInspection"
-        android:layout_width="253dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:fontFamily="@font/comfortaa_bold"
-        android:text="@string/deinspection"
-        android:textColor="#000000"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
