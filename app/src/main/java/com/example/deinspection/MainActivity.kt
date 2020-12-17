@@ -13,9 +13,7 @@ import com.example.deinspection.classes.*
 const val ATTRIBUTE = "attribute"
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        val carList: MutableList<Car> = ArrayList()
-    }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
