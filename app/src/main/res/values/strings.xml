@@ -42,5 +42,16 @@
     <string name="reportar_erro">Reportar erro</string>
     <string name="edit_car_button">edit car button</string>
     <string name="car_brand_model_matricula">Car brand model matricula</string>
+    <string name="insira_as_informa_es_sobre_o_seu_carro">Insira as informações sobre o seu carro</string>
+    <string name="modelo">Modelo:</string>
+    <string name="matricula">Matricula:</string>
+    <string name="data">Data:</string>
+    <string name="marca">Marca:</string>
+    <string name="modelo_do_carro">modelo do carro</string>
+    <string name="matricula_aa00aa">matricula AA00AA</string>
+    <string name="ano">ano</string>
+    <string name="marca_do_carro">marca do carro</string>
+    <string name="mes">mes</string>
+    <string name="back">Back</string>
 
 </resources>

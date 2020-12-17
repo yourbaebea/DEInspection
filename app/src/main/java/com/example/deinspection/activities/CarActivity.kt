@@ -1,93 +1,71 @@
 package com.example.deinspection.activities
 
-import android.view.View
-import android.widget.Button
-import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
-import androidx.room.Room
-import com.example.deinspection.ATTRIBUTE
-import com.example.deinspection.DB
-import com.example.deinspection.R
-import com.example.deinspection.classes.Car
-import com.example.deinspection.classes.Reminder
-import com.example.deinspection.database.MyRoom
-import kotlinx.android.synthetic.main.activity_car.*
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.deinspection.MainActivity
-
-
+import android.view.View
+import android.widget.Button
+import android.widget.ProgressBar
+import android.widget.TextView
+import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
+import com.example.deinspection.ATTRIBUTE
+import com.example.deinspection.R
+import com.example.deinspection.classes.Car
 import kotlinx.android.synthetic.main.activity_car.*
-import java.util.*
+
 
 class CarActivity : AppCompatActivity() {
-    lateinit var db: MyRoom
+    var car = Car()
 
-    //vars for the alarms
-    lateinit var context: Context
-    lateinit var alarmManager: AlarmManager
-    var hour: Int = 9 // this is from the db alarm time default (its defined on the settings page)
-    var minute: Int = 9 // this is from the db alarm time default (its defined on the settings page)
-
+    /*lateinit var a1 : TextView
+    lateinit var a2 : TextView
+    lateinit var a3 : TextView
+    lateinit var a4 : TextView
+    lateinit var a5 : TextView
+    lateinit var a6 : TextView
+    lateinit var a7 : TextView
+    lateinit var a8 : TextView
+    lateinit var a9 : TextView*/
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car)
-        db = Room.databaseBuilder(this, MyRoom::class.java, DB.DATABASE_NAME)
-            .allowMainThreadQueries().build()
 
+        /*a1 = findViewById(R.id.textView1)
+        a2 = findViewById(R.id.textView2)
+        a3 = findViewById(R.id.textView3)
+        a4 = findViewById(R.id.textView4)
+        a5 = findViewById(R.id.textView5)
+        a6 = findViewById(R.id.textView6)
+        a7 = findViewById(R.id.textView)
+        a8 = findViewById(R.id.textView8)
+        a9 = findViewById(R.id.textView9)*/
 
-        //this function updates the selected/non selected reminders
-        // if we change the duration of the reminder it only updates after the alarm or a newupdate!!!!!!!
-        checkSelected()
+        /*setprogress(progress_bar1, a1)
+        setprogress(progress_bar2, a2)
+        setprogress(progress_bar3, a3)
+        setprogress(progress_bar4, a4)
+        setprogress(progress_bar5, a5)
+        setprogress(progress_bar6, a6)
+        setprogress(progress_bar7, a7)
+        setprogress(progress_bar8, a8)
+        setprogress(progress_bar9, a9)*/
 
-        context = this
-        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        /*setprogress(progress_bar1, car.inspection.reminder)
+        setprogress(progress_bar2, car.stamp.reminder)
+        setprogress(progress_bar3, car.oil.reminder)
+        setprogress(progress_bar4, car.tirePressure.reminder)
+        setprogress(progress_bar5, car.tires.reminder)
+        setprogress(progress_bar6, car.airFilters.reminder)
+        setprogress(progress_bar7, car.windowCleaner.reminder)
+        setprogress(progress_bar8, car.custom.reminder)
+        setprogress(progress_bar9, car.custom2.reminder)*/
 
-
-        listeners()
-
-    }
-
-
-    // this for testing the alarms
-    /*
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_car)
-
-        context = this
-        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-
-        val intent = Intent(context, MainActivity.Receiver::class.java)
-
-        val pendingIntent =
-            PendingIntent.getBroadcast(context, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-
-
-        var time: Long = 60000 //1 min para testes apenas!!!!!!!
-
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, time, pendingIntent)
-        Log.d("CarActivity", "Alarme enviado!")
-
-    }
-
-     */
-
-    //function of all the listeners
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun listeners() {
-        btnBackC.setOnClickListener() {
+        btnBackC.setOnClickListener(){
             val intent = Intent(this, MainMenuActivity::class.java)
             startActivity(intent)
         }
@@ -101,11 +79,7 @@ class CarActivity : AppCompatActivity() {
             //val intent = Intent(this, InspectionActivity::class.java)
             //startActivity(intent)
 
-            Toast.makeText(
-                this@CarActivity,
-                "Funcionalidade indisponível de momento!\nEsteja atento às nossas redes sociais para quando for lançada!\n",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(this@CarActivity, "this feat. is not done", Toast.LENGTH_SHORT).show()
         }
 
 
@@ -220,8 +194,7 @@ class CarActivity : AppCompatActivity() {
         }
     }
 
-
-    fun helpBtn(id: String) {
+    fun helpBtn(id: String){
         //go to CarDetailsHelp
         val intent = Intent(this, CarDetailsHelpActivity::class.java)
         intent.putExtra(ATTRIBUTE, id)
@@ -230,7 +203,7 @@ class CarActivity : AppCompatActivity() {
 
     }
 
-    fun infoBtn(id: String) {
+    fun infoBtn(id: String){
         //go to CarDetailsInfo
         val intent = Intent(this, CarDetailsInfoActivity::class.java)
         intent.putExtra(ATTRIBUTE, id)
@@ -239,12 +212,10 @@ class CarActivity : AppCompatActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun updateBtn(id: String) {
+    fun updateBtn(id: String){
         //every back button when editing should have a popup making sure
         //pop up
         //do you want to leave without saving?
-        val rem = Reminder()
-        rem.title = id
         val dialog: AlertDialog = AlertDialog.Builder(this)
             .setTitle("DEInspection")
             .setMessage("Confirmar uma nova atualização de $id?")
@@ -256,57 +227,16 @@ class CarActivity : AppCompatActivity() {
 
         positiveButton.setOnClickListener() {
             dialog.dismiss()
-            var intid = 0
-            when (id) {
-                "oil" -> {
-                    intid = 1
-                    rem.updateDate()
-                }
-                "tirePressure" -> {
-                    intid = 2
-                    rem.updateDate()
-                }
-                "tires" -> {
-                    intid = 3
-                    rem.updateDate()
-                }
-                "airFilters" -> {
-                    intid = 4
-                    rem.updateDate()
-                }
-                "windowCleaner" -> {
-                    intid = 5
-                    rem.updateDate()
-                }
-                "custom" -> {
-                    intid = 6
-                    rem.updateDate()
-                }
-                "custom2" -> {
-                    intid = 7
-                    rem.updateDate()
-                }
-                "stamp" -> {
-                    intid = 8
-                    rem.updateDateLicensePlate()
-                }
-                "inspection" -> {
-                    intid = 9
-                    rem.updateDateLicensePlate()
-                }
-            }
-            db.reminderDao().updateReminder(
-                selected = rem.selected,
-                title = rem.title,
-                checkcounter = rem.checkcounter,
-                lastdate = rem.lastdate,
-                nextdate = rem.lastdate,
-                reminder = rem.reminder,
-                id = rem.id
-            )
-            //this does the update for the alarm
-            updateAlarm(rem, intid)
+            if (id=="oil")  car.oil.updateDate()
+            if (id=="tirePressure")  car.tirePressure.updateDate()
+            if (id=="tires")  car.tires.updateDate()
+            if (id=="airFilters")  car.airFilters.updateDate()
+            if (id=="windowCleaner")  car.windowCleaner.updateDate()
+            if (id=="custom")  car.custom.updateDate()
+            if (id=="custom2")  car.custom2.updateDate()
 
+            if (id=="stamp")  car.stamp.updateDateLicencePlate()
+            if (id=="inspection")  car.inspection.updateDateLicencePlate()
             Toast.makeText(this@CarActivity, "$id updated", Toast.LENGTH_SHORT).show()
 
         }
@@ -317,85 +247,21 @@ class CarActivity : AppCompatActivity() {
 
     }
 
-
-    //functions of the alarm
-    @RequiresApi(Build.VERSION_CODES.KITKAT)
-    fun updateAlarm(rem: Reminder, id: Int) {
-        // im suposing that the updateReminder puts the next cal in nextdate like i had
-        rem.nextdate.set(Calendar.HOUR_OF_DAY, hour)
-        rem.nextdate.set(Calendar.HOUR_OF_DAY, minute)
-        val time = rem.nextdate.timeInMillis
-        val intent = Intent(context, MainActivity.Receiver::class.java)
-        db.reminderDao().updateReminder(
-            selected = rem.selected,
-            title = rem.title,
-            checkcounter = rem.checkcounter,
-            lastdate = rem.lastdate,
-            nextdate = rem.lastdate,
-            reminder = rem.reminder,
-            id = rem.id
-        )
-
-        val pendingIntent =
-            PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-        if (pendingIntent != null) { // if there is a pendingIntent for this id we cancel it
-            alarmManager.cancel(pendingIntent)
-            Log.d("CarActivity", "verificamos o alarme antes de mandar notificacao")
+    fun setprogress(a : ProgressBar, b : Int){
+        a.progress = car.oil.reminder
+        when (b){
+            0 -> a.progress=0 //never
+            1 -> a.progress=100 //everyday
+            in 2..6 -> {
+                a.progress=100/b
+            } //1-6days
+            in 7..10 -> a.progress=100/(7*(b-6)) //1-4 weeks
+            in 11..21 -> a.progress=100/(31*(b-10)) //1-11 months
+            in 22..26 -> a.progress=100/(365*(b-21)) //1-5 years
         }
-
-        Log.d("CarActivity", "Alarme criado para : ${rem.nextdate}")
-
-
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, time, pendingIntent)
-
     }
-
-    @RequiresApi(Build.VERSION_CODES.KITKAT)
-    fun checkSelected() {
-        var rem: Reminder
-        for (i in 1..9) {
-            rem = getRem(i)
-            val intent = Intent(context, MainActivity.Receiver::class.java)
-            val pendingIntent =
-                PendingIntent.getBroadcast(context, i, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-            if (pendingIntent != null) { // if there is a pendingIntent for this id we cancel it
-                if (!rem.selected) alarmManager.cancel(pendingIntent)
-                Log.d("MainActivity", "verificamos o alarme antes de mandar notificacao")
-            } else {
-                //if there is no pending intent and selected is true, we create a new alarm
-                if (rem.selected) updateAlarm(rem, i)
-            }
-        }
-
-
-    }
-
-    /*
-    ROQUE O QUE É ESTE ID?????
-     */
-    fun getRem(n: Int): Reminder {
-        when (n) {
-            //o que é suposto ser este id???
-            1 -> return db.reminderDao().getByIdAndTitle(1, "oil")
-            2 -> return db.reminderDao().getByIdAndTitle(1, "tirePressure")
-            3 -> return db.reminderDao().getByIdAndTitle(1, "tires")
-            4 -> return db.reminderDao().getByIdAndTitle(1, "airFilters")
-            5 -> return db.reminderDao().getByIdAndTitle(1, "windowCleaner")
-            6 -> return db.reminderDao().getByIdAndTitle(1, "custom")
-            7 -> return db.reminderDao().getByIdAndTitle(1, "custom2")
-            8 -> return db.reminderDao().getByIdAndTitle(1, "stamp")
-            9 -> return db.reminderDao().getByIdAndTitle(1, "inspection")
-        }
-        return Reminder() //empty reminder
-
-    }
-
-
 
 }
-
-
-
 
 
 
