@@ -5,6 +5,7 @@ https://docs.google.com/document/d/1BQLJMznzsFkIlPDLVhzw1IawNizXdjiI4bRkByRUtFU/
 
 - alarm manager https://www.youtube.com/watch?v=nl-dheVpt8o
 - keyboard options https://www.youtube.com/watch?v=DivBp_9ZeK0
+- how to publish app to google play https://www.youtube.com/watch?v=AWawL5HFn64
 
 doc com o relatorio final
 https://docs.google.com/document/d/1OF_hRDJ-z3__PLirzc0vHRszc4udglr7KlVahWh4dQk/edit?usp=sharing
