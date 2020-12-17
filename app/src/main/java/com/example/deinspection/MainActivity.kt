@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         //activity main is the first page on the app, just the logo + loading bar(?)
         //
 
+        // animation of the logo
+        // rn its the wrong pic
+        // waiting for the png without background
         val firstanim = AnimationUtils.loadAnimation(this, R.anim.firstpage)
 
 
