@@ -22,6 +22,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.deinspection.MainActivity
 
 
 import kotlinx.android.synthetic.main.activity_car.*
@@ -297,7 +298,7 @@ class CarActivity : AppCompatActivity() {
         rem.nextdate.set(Calendar.HOUR_OF_DAY, hour)
         rem.nextdate.set(Calendar.HOUR_OF_DAY, minute)
         var time = rem.nextdate.timeInMillis
-        val intent = Intent(context, Receiver::class.java)
+        val intent = Intent(context, MainActivity.Receiver::class.java)
         db.reminderDao().updateReminder(
             selected = rem.selected,
             title = rem.title,
@@ -332,14 +333,13 @@ class CarActivity : AppCompatActivity() {
         var rem: Reminder
         for (i in 1..9) {
             rem = getRem(i)
-            val intent = Intent(context, Receiver::class.java)
+            val intent = Intent(context, MainActivity.Receiver::class.java)
             val pendingIntent =
                 PendingIntent.getBroadcast(context, i, intent, PendingIntent.FLAG_UPDATE_CURRENT)
             if (pendingIntent != null) { // if there is a pendingIntent for this id we cancel it
                 if (!rem.selected) alarmManager.cancel(pendingIntent)
                 Log.d("MainActivity", "verificamos o alarme antes de mandar notificacao")
-            }
-            else {
+            } else {
                 //if there is no pending intent and selected is true, we create a new alarm
                 if (rem.selected) updateAlarm(rem, i)
             }
@@ -347,6 +347,7 @@ class CarActivity : AppCompatActivity() {
 
 
     }
+
     /*
     ROQUE O QUE É ESTE ID?????
      */
@@ -368,13 +369,8 @@ class CarActivity : AppCompatActivity() {
     }
 
 
-}
 
-    class Receiver : BroadcastReceiver() {
-        override fun onReceive(context: Context?, intent: Intent?) {
-            Log.d("MainActivity", "Alarme recebido")
-        }
-    }
+}
 
 
 
