@@ -8,14 +8,19 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.room.Room
 import com.example.deinspection.ATTRIBUTE
+import com.example.deinspection.DB
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
+import com.example.deinspection.database.MyRoom
 import kotlinx.android.synthetic.main.activity_new_car_2.*
 import kotlinx.android.synthetic.main.activity_new_car_3.*
 
 class NewCar3Activity : AppCompatActivity() {
-    var car= Car()
+    var plate = intent.extras?.get("Car plate")
+    lateinit var db: MyRoom
+    var car = db.carDao().getByLicense(plate as String) //plate já é uma string?
 
     lateinit var slider : SeekBar
     lateinit var valor : TextView
@@ -40,6 +45,8 @@ class NewCar3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_car_3)
+
+        db = Room.databaseBuilder(this,MyRoom::class.java, DB.DATABASE_NAME).allowMainThreadQueries().build()
 
         seekBar.min = 1
         seekBar.max = 26
@@ -146,15 +153,22 @@ class NewCar3Activity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun filledAlready() {
 
-        seekBar.progress= car.oil.reminder
-        seekBar2.progress= car.inspection.reminder
-        seekBar3.progress= car.stamp.reminder
-        seekBar4.progress= car.tirePressure.reminder
-        seekBar5.progress= car.tires.reminder
-        seekBar6.progress = car.airFilters.reminder
-        seekBar7.progress = car.windowCleaner.reminder
-        seekBar8.progress = car.custom.reminder
-        seekBar9.progress = car.custom2.reminder
+        val carReminderArray = db.carReminderDao().getCarReminderfromPlate(plate as String)
+        for(cr in carReminderArray) {
+            seekBar.progress = db.reminderDao().getByIdAndTitle(cr.reminderId,"oil").reminder
+
+            /*
+            seekBar2.progress = car.inspection.reminder
+            seekBar3.progress = car.stamp.reminder
+            seekBar4.progress = car.tirePressure.reminder
+            seekBar5.progress = car.tires.reminder
+            seekBar6.progress = car.airFilters.reminder
+            seekBar7.progress = car.windowCleaner.reminder
+            seekBar8.progress = car.custom.reminder
+            seekBar9.progress = car.custom2.reminder
+             */
+        }
+
 
         seekBar.progress= 10
         seekBar2.progress= 1
@@ -162,7 +176,11 @@ class NewCar3Activity : AppCompatActivity() {
 
     //save all the info in this page
     fun saveInfo(){
-        car.oil.reminder= seekBar.progress
+        val carReminderArray = db.carReminderDao().getCarReminderfromPlate(plate as String)
+        for(cr in carReminderArray) {
+            db.reminderDao().updateReminderByTitle(seekBar.progress,cr.reminderId,"oil")
+            //completar igual para todos,mudar oil e o seekbar usado
+           /*
         car.inspection.reminder = seekBar2.progress
         car.stamp.reminder =  seekBar3.progress
         car.tirePressure.reminder= seekBar4.progress
@@ -171,6 +189,8 @@ class NewCar3Activity : AppCompatActivity() {
         car.windowCleaner.reminder = seekBar7.progress
         car.custom.reminder= seekBar8.progress
         car.custom2.reminder = seekBar9.progress
+        */
+        }
     }
 
     //where the back button goes to
