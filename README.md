@@ -1,4 +1,6 @@
 # DEInspection
+email deinspectionuc@gmail.com
+pp:   Tesladorok
 
 docs com as cenas que faltam fazer
 https://docs.google.com/document/d/1BQLJMznzsFkIlPDLVhzw1IawNizXdjiI4bRkByRUtFU/edit?usp=sharing
