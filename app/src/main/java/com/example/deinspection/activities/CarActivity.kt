@@ -3,6 +3,8 @@ package com.example.deinspection.activities
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.room.Room
@@ -45,6 +47,15 @@ class CarActivity : AppCompatActivity() {
         db = Room.databaseBuilder(this, MyRoom::class.java, DB.DATABASE_NAME)
             .allowMainThreadQueries().build()
 
+        setprogress(progress_bar1, car.inspection.reminder)
+        setprogress(progress_bar2, car.stamp.reminder)
+        setprogress(progress_bar3, car.oil.reminder)
+        setprogress(progress_bar4, car.tirePressure.reminder)
+        setprogress(progress_bar5, car.tires.reminder)
+        setprogress(progress_bar6, car.airFilters.reminder)
+        setprogress(progress_bar7, car.windowCleaner.reminder)
+        setprogress(progress_bar8, car.custom.reminder)
+        setprogress(progress_bar9, car.custom2.reminder)
 
         //this function updates the selected/non selected reminders
         // if we change the duration of the reminder it only updates after the alarm or a newupdate!!!!!!!
@@ -395,9 +406,21 @@ class CarActivity : AppCompatActivity() {
 
     }
 
-
-
-
+    
+   
+    fun setprogress(a : ProgressBar, b : Int){
+        a.progress = car.oil.reminder
+        when (b){
+            0 -> a.progress=0 //never
+            1 -> a.progress=100 //everyday
+            in 2..6 -> {
+                a.progress=100/b
+            } //1-6days
+            in 7..10 -> a.progress=100/(7*(b-6)) //1-4 weeks
+            in 11..21 -> a.progress=100/(31*(b-10)) //1-11 months
+            in 22..26 -> a.progress=100/(365*(b-21)) //1-5 years
+        }
+    }
 
 
 }
