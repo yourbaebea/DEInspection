@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "new animation", Toast.LENGTH_LONG).show()
         logocar.startAnimation(firstanim)
 
-        //loaded()
+        loaded()
     }
 
     private fun loaded(){
