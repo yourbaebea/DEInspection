@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:layout_marginTop="24dp"
         android:background="@color/black"
         android:drawableLeft="@drawable/ic_arrowback"
-        android:text="@string/back"
+        android:text="Back"
         android:textColor="#000000"
         app:backgroundTint="#00591010"
         app:layout_constraintBottom_toTopOf="@+id/DEInspection"
@@ -24,19 +24,14 @@
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19"
-        android:drawableStart="@drawable/ic_arrowback" />
-
+        app:layout_constraintVertical_bias="0.19" />
 
     <TextView
         android:id="@+id/DEInspection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
         android:layout_marginTop="120dp"
         android:fontFamily="@font/comfortaa_bold"
-        android:gravity="center"
         android:text="@string/deinspection"
         android:textColor="#000000"
         android:textSize="36sp"
@@ -48,12 +43,10 @@
         android:id="@+id/DEInspection2"
         android:layout_width="339dp"
         android:layout_height="100dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
-        android:text="@string/insira_as_informa_es_sobre_o_seu_carro"
+        android:text="Insira as informações sobre o seu carro"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,12 +57,9 @@
         android:id="@+id/btnNextNC"
         android:layout_width="218dp"
         android:layout_height="73dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="600dp"
         android:layout_marginBottom="52dp"
         android:fontFamily="@font/comfortaa"
-        android:text="@string/pr_ximo"
+        android:text="Próximo"
         android:textColor="#000000"
         android:textSize="24sp"
         app:backgroundTint="#F1E794"
@@ -78,129 +68,149 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/model"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="300dp"
-        android:fontFamily="@font/comfortaa"
-        android:gravity="center"
-        android:text="@string/modelo"
-        android:textColor="#000000"
-        android:textSize="24sp" />
+    <ScrollView
+        android:layout_width="392dp"
+        android:layout_height="246dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNextNC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DEInspection2"
+        app:layout_constraintVertical_bias="0.49">
 
-    <EditText
-        android:id="@+id/editCarModel"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="310dp"
-        android:ems="10"
-        android:fontFamily="@font/comfortaa"
-        android:hint="@string/modelo_do_carro"
-        android:inputType="textPersonName"
-        android:textSize="18sp"
-        android:importantForAutofill="no" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/matricula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="350dp"
-        android:fontFamily="@font/comfortaa"
-        android:gravity="center"
-        android:text="@string/matricula"
-        android:textColor="#000000"
-        android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:gravity="center"
+                    android:text="Modelo:"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/editTextMatricula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="170dp"
-        android:layout_marginLeft="170dp"
-        android:layout_marginTop="350dp"
-        android:ems="10"
-        android:fontFamily="@font/comfortaa"
-        android:hint="@string/matricula_aa00aa"
-        android:inputType="none"
-        android:textSize="18sp"
-        android:importantForAutofill="no" />
+                <EditText
+                    android:id="@+id/editCarModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:fontFamily="@font/comfortaa"
+                    android:hint="modelo do carro"
+                    android:inputType="textPersonName"
+                    android:textSize="18sp" />
 
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="400dp"
-        android:fontFamily="@font/comfortaa"
-        android:text="@string/data"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        tools:gravity="left" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/editMonth"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="400dp"
-        android:ems="10"
-        android:hint="@string/mes"
-        android:inputType="number"
-        android:importantForAutofill="no" />
+                <TextView
+                    android:id="@+id/matricula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:gravity="center"
+                    android:text="Matricula:"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/editYear"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="260dp"
-        android:layout_marginLeft="260dp"
-        android:layout_marginTop="400dp"
-        android:ems="10"
-        android:hint="@string/ano"
-        android:inputType="number"
-        android:importantForAutofill="no" />
+                <EditText
+                    android:id="@+id/editTextMatricula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:fontFamily="@font/comfortaa"
+                    android:hint="matricula AA00AA"
+                    android:inputType="none"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/brand"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="450dp"
-        android:fontFamily="@font/comfortaa"
-        android:text="@string/marca"
-        android:textColor="#000000"
-        android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:gravity="center|left"
+                    android:text="Data:"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    tools:gravity="left" />
 
-    <EditText
-        android:id="@+id/editCarBrand"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:fontFamily="@font/comfortaa"
-        android:hint="@string/marca_do_carro"
-        android:inputType="textPersonName"
-        android:textSize="18sp"
-        android:importantForAutofill="no" />
+                <EditText
+                    android:id="@+id/editMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:hint="mes"
+                    android:inputType="number" />
 
-</RelativeLayout>
+                <EditText
+                    android:id="@+id/editYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="ano"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Marca:"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/editCarBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="44dp"
+                    android:layout_marginRight="44dp"
+                    android:ems="10"
+                    android:fontFamily="@font/comfortaa"
+                    android:hint="marca do carro"
+                    android:inputType="textPersonName"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
