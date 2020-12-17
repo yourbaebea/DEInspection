@@ -9,11 +9,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.room.Room
+import com.example.deinspection.DB
 import com.example.deinspection.MainActivity
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
 import kotlinx.android.synthetic.main.activity_new_car.*
-import com.example.deinspection.MainActivity.Companion.carList
+import com.example.deinspection.database.MyRoom
 import java.util.*
 
 
@@ -21,12 +23,15 @@ class NewCarActivity : AppCompatActivity() {
     var number: Int=0
     var accepted= false
     var car = Car()
+    lateinit var db: MyRoom
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_new_car)
+
+        db = Room.databaseBuilder(this,MyRoom::class.java, DB.DATABASE_NAME).allowMainThreadQueries().build()
 
         /*
         see if there is extra content from the page
@@ -63,7 +68,7 @@ class NewCarActivity : AppCompatActivity() {
             // save and then leave
             negativeButton.setOnClickListener() {
                 //save info
-                accepted= saveInfo(car)
+                accepted= saveInfo()
                 if (accepted) {
                     Toast.makeText(this@NewCarActivity, "Saving info", Toast.LENGTH_SHORT).show()
                     dialog.dismiss()
@@ -82,7 +87,7 @@ class NewCarActivity : AppCompatActivity() {
         btnNextNC.setOnClickListener() {
             //save definitions
             //this has an error for the date
-            accepted= saveInfo(car)
+            accepted= saveInfo()
             //justo for tests we are gonna accept all
             accepted= true
             if (accepted) {
@@ -112,10 +117,8 @@ class NewCarActivity : AppCompatActivity() {
     // new car is created here if all is good
     //save all the info in this page
     @RequiresApi(Build.VERSION_CODES.O)
-    fun saveInfo(car: Car): Boolean{
+    fun saveInfo(): Boolean{
 
-        //if the car is null we create the new car
-        if (car==null) carList.add(car)
 
         val marca = editCarBrand.text.toString()
         val modelo = editCarModel.text.toString()
@@ -160,7 +163,13 @@ class NewCarActivity : AppCompatActivity() {
         data.set(Calendar.MONTH, mes)
         data.set(Calendar.DAY_OF_MONTH, 1)
 
-        car.init(marca,modelo,matricula,data)
+        //car.init(marca,modelo,matricula,data)
+
+
+        var newCar = db.carDao().insertCar(Car(licenseplate = matricula,brand=marca,model=modelo,date = data))[0]
+        val intent = Intent(this, NewCar2Activity::class.java)
+        intent.putExtra("Car plate",newCar) //might go wrong
+
         return true
     }
 
@@ -168,7 +177,7 @@ class NewCarActivity : AppCompatActivity() {
     fun filledAlready(){
         editCarBrand.setText(car.brand)
         editCarModel.setText(car.model)
-        editTextMatricula.setText(car.licenceplate)
+        editTextMatricula.setText(car.licenseplate)
         car.date?.let { editMonth.setText(it.get(Calendar.MONTH)) }
         car.date?.let { editYear.setText(it.get(Calendar.YEAR)) }
 
