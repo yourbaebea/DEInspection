@@ -21,6 +21,11 @@ class NewCar3Activity : AppCompatActivity() {
     var plate = intent.extras?.get("Car plate")
     lateinit var db: MyRoom
     var car = db.carDao().getByLicense(plate as String) //plate já é uma string?
+    val titleArray = arrayOf("Oil", "Inspection", "Stamp", "Tire pressure", "Tires", "Air filters", "Window Cleaner")
+    val customArray = intent.extras?.get("Customs") as Array<*>
+    val seekbarArray = arrayOf(seekBar,seekBar2,seekBar3,seekBar4,seekBar5,seekBar6,seekBar7,seekBar8,seekBar9)
+
+
 
     lateinit var slider : SeekBar
     lateinit var valor : TextView
@@ -40,66 +45,42 @@ class NewCar3Activity : AppCompatActivity() {
     lateinit var valor8 : TextView
     lateinit var slider9 : SeekBar
     lateinit var valor9 : TextView
+    val sliderArray = arrayOf(slider,slider2,slider3,slider4,slider5,slider6,slider7,slider8,slider9)
+    val valorArray = arrayOf(valor,valor2,valor3,valor4,valor5,valor6,valor7,valor8,valor9)
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_car_3)
 
-        db = Room.databaseBuilder(this,MyRoom::class.java, DB.DATABASE_NAME).allowMainThreadQueries().build()
+        db = Room.databaseBuilder(this, MyRoom::class.java, DB.DATABASE_NAME).allowMainThreadQueries().build()
 
-        seekBar.min = 1
-        seekBar.max = 26
-        seekBar2.min = 1
-        seekBar2.max = 26
-        seekBar3.min = 1
-        seekBar3.max = 26
-        seekBar4.min = 1
-        seekBar4.max = 26
-        seekBar5.min = 1
-        seekBar5.max = 26
-        seekBar6.min = 1
-        seekBar6.max = 26
-        seekBar7.min = 1
-        seekBar7.max = 26
-        seekBar8.min = 1
-        seekBar8.max = 26
-        seekBar9.min = 1
-        seekBar9.max = 26
+        val rSeekBarArray = arrayOf(R.id.seekBar,R.id.seekBar2,R.id.seekBar3,R.id.seekBar4,R.id.seekBar5,R.id.seekBar6,R.id.seekBar7,R.id.seekBar8,R.id.seekBar9)
+        val attributeArray = arrayOf(R.id.attribute1,R.id.attribute2,R.id.attribute3,R.id.attribute4,R.id.attribute5,R.id.attribute6,R.id.attribute7,R.id.attribute8,R.id.attribute9)
 
-        slider = findViewById(R.id.seekBar) as SeekBar
-        valor = findViewById(R.id.attribute1) as TextView
-        slider2 = findViewById(R.id.seekBar2) as SeekBar
-        valor2 = findViewById(R.id.attribute2) as TextView
-        slider3 = findViewById(R.id.seekBar3) as SeekBar
-        valor3 = findViewById(R.id.attribute3) as TextView
-        slider4 = findViewById(R.id.seekBar4) as SeekBar
-        valor4 = findViewById(R.id.attribute4) as TextView
-        slider5 = findViewById(R.id.seekBar5) as SeekBar
-        valor5 = findViewById(R.id.attribute5) as TextView
-        slider6 = findViewById(R.id.seekBar6) as SeekBar
-        valor6 = findViewById(R.id.attribute6) as TextView
-        slider7 = findViewById(R.id.seekBar7) as SeekBar
-        valor7 = findViewById(R.id.attribute7) as TextView
-        slider8 = findViewById(R.id.seekBar8) as SeekBar
-        valor8 = findViewById(R.id.attribute8) as TextView
-        slider9 = findViewById(R.id.seekBar9) as SeekBar
-        valor9 = findViewById(R.id.attribute9) as TextView
+        for (bar in seekbarArray){
+            bar.min = 1
+            bar.max = 26
+        }
+
+        var pos= 0
+        for(sb in sliderArray) {
+            sliderArray[pos] = findViewById<SeekBar>(rSeekBarArray[pos])
+            valorArray[pos] = findViewById<TextView>(attributeArray[pos])
+            pos+= 1
+        }
+
 
         // if the car already exists, we fill it with the info we already have
         // FOR THE LOVE OF GOD IGNORE THIS SIMPLIFICATION
         // O CARRO NAO VAI SER SEMPRE VAZIO ELE APENAS ESTÁ VAZIO PORQUE ELE FOI DEFINIDO NA LINHA 19
-        if (car != null) filledAlready()
+        filledAlready()
+        pos=0
+        for(sb in sliderArray) {
+            seekBar(sb,valorArray[pos])
+            pos+=1
+        }
 
-        seekBar(slider, valor)
-        seekBar(slider2, valor2)
-        seekBar(slider3, valor3)
-        seekBar(slider4, valor4)
-        seekBar(slider5, valor5)
-        seekBar(slider6, valor6)
-        seekBar(slider7, valor7)
-        seekBar(slider8, valor8)
-        seekBar(slider9, valor9)
 
         btnBackAL.setOnClickListener() {
 
@@ -155,18 +136,17 @@ class NewCar3Activity : AppCompatActivity() {
 
         val carReminderArray = db.carReminderDao().getCarReminderfromPlate(plate as String)
         for(cr in carReminderArray) {
-            seekBar.progress = db.reminderDao().getByIdAndTitle(cr.reminderId,"oil").reminder
-
-            /*
-            seekBar2.progress = car.inspection.reminder
-            seekBar3.progress = car.stamp.reminder
-            seekBar4.progress = car.tirePressure.reminder
-            seekBar5.progress = car.tires.reminder
-            seekBar6.progress = car.airFilters.reminder
-            seekBar7.progress = car.windowCleaner.reminder
-            seekBar8.progress = car.custom.reminder
-            seekBar9.progress = car.custom2.reminder
-             */
+            var pos = 0
+            for (t in titleArray) {
+                seekbarArray[pos].progress = db.reminderDao().getByIdAndTitle(cr.reminderId, t).reminder
+                pos+= 1
+            }
+            var cpos = 0
+            for (c in customArray){
+                seekbarArray[pos].progress = db.reminderDao().getByIdAndTitle(cr.reminderId, c as String).reminder
+                pos+= 1
+                cpos+= 1
+            }
         }
 
 
@@ -178,18 +158,15 @@ class NewCar3Activity : AppCompatActivity() {
     fun saveInfo(){
         val carReminderArray = db.carReminderDao().getCarReminderfromPlate(plate as String)
         for(cr in carReminderArray) {
-            db.reminderDao().updateReminderByTitle(seekBar.progress,cr.reminderId,"oil")
-            //completar igual para todos,mudar oil e o seekbar usado
-           /*
-        car.inspection.reminder = seekBar2.progress
-        car.stamp.reminder =  seekBar3.progress
-        car.tirePressure.reminder= seekBar4.progress
-        car.tires.reminder= seekBar5.progress
-        car.airFilters.reminder = seekBar6.progress
-        car.windowCleaner.reminder = seekBar7.progress
-        car.custom.reminder= seekBar8.progress
-        car.custom2.reminder = seekBar9.progress
-        */
+            var pos = 0
+            for (t in titleArray) {
+                db.reminderDao().updateReminderByTitle(seekbarArray[pos].progress, cr.reminderId, t)
+                pos += 1
+            }
+            for (c in customArray){
+                db.reminderDao().updateReminderByTitle(seekbarArray[pos].progress, cr.reminderId, c as String)
+                pos+= 1
+            }
         }
     }
 

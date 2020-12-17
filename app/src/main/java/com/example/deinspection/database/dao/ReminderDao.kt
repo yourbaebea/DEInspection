@@ -21,6 +21,8 @@ interface ReminderDao {
     fun updateSelectedByTitle(selected: Boolean,id: Int,title: String)
     @Query("UPDATE reminder SET title = :title WHERE id = :id")
     fun updateTitle(title: String,id: Int)
+    @Query("UPDATE reminder SET title = :title WHERE id = :id and title = :oldtitle")
+    fun updateTitlebyTitle(title: String,id: Int,oldtitle: String)
     @Query("UPDATE reminder SET reminder=:reminder WHERE id= :id and title= :title")
     fun updateReminderByTitle(reminder: Int,id: Int,title: String)
     @Query("SELECT * FROM reminder WHERE id IN(SELECT reminderId FROM car_reminder WHERE licenseplate =:licenseplate)  ")
