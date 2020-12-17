@@ -409,7 +409,6 @@ class CarActivity : AppCompatActivity() {
     
    
     fun setprogress(a : ProgressBar, b : Int){
-        a.progress = car.oil.reminder
         when (b){
             0 -> a.progress=0 //never
             1 -> a.progress=100 //everyday
