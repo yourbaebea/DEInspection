@@ -1,8 +1,11 @@
 package com.example.deinspection
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 
@@ -47,6 +50,13 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, MainMenuActivity::class.java)
         startActivity(intent)
         
+    }
+
+
+    class Receiver : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            Log.d("MainActivity", "Alarme recebido")
+        }
     }
 
 
