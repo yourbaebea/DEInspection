@@ -37,6 +37,7 @@ class CarActivity : AppCompatActivity() {
     var hour: Int = 9 // this is from the db alarm time default (its defined on the settings page)
     var minute: Int = 9 // this is from the db alarm time default (its defined on the settings page)
 
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +57,32 @@ class CarActivity : AppCompatActivity() {
         listeners()
 
     }
+
+
+    // this for testing the alarms
+    /*
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_car)
+
+        context = this
+        alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+
+        val intent = Intent(context, MainActivity.Receiver::class.java)
+
+        val pendingIntent =
+            PendingIntent.getBroadcast(context, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+
+        var time: Long = 60000 //1 min para testes apenas!!!!!!!
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, time, pendingIntent)
+        Log.d("CarActivity", "Alarme enviado!")
+
+    }
+
+     */
 
     //function of all the listeners
     @RequiresApi(Build.VERSION_CODES.O)
@@ -297,7 +324,7 @@ class CarActivity : AppCompatActivity() {
         // im suposing that the updateReminder puts the next cal in nextdate like i had
         rem.nextdate.set(Calendar.HOUR_OF_DAY, hour)
         rem.nextdate.set(Calendar.HOUR_OF_DAY, minute)
-        var time = rem.nextdate.timeInMillis
+        val time = rem.nextdate.timeInMillis
         val intent = Intent(context, MainActivity.Receiver::class.java)
         db.reminderDao().updateReminder(
             selected = rem.selected,
@@ -317,12 +344,7 @@ class CarActivity : AppCompatActivity() {
         }
 
         Log.d("CarActivity", "Alarme criado para : ${rem.nextdate}")
-        /*
-        this is the correct way to do it but for testing we are going to set time 1min
-        AFTER TESTING DELETE THIS
-         */
 
-        time = 60000 //1 min para testes apenas!!!!!!!
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, time, pendingIntent)
 
