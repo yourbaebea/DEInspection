@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.deinspection.ATTRIBUTE
 import com.example.deinspection.R
+import com.example.deinspection.database.MyRoom
 
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
@@ -13,6 +14,7 @@ class MainMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
+        lateinit var db: MyRoom
 
         btnCar1.setOnClickListener() {
             seeCar(1)
