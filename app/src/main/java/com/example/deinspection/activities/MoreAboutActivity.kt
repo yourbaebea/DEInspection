@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
-import com.example.deinspection.MainActivity.Companion.carList
 import kotlinx.android.synthetic.main.activity_more_info.*
 import java.util.*
 

@@ -9,19 +9,23 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.room.Room
 import com.example.deinspection.ATTRIBUTE
+import com.example.deinspection.DB
 import com.example.deinspection.R
 import com.example.deinspection.classes.Car
+import com.example.deinspection.classes.Reminder
+import com.example.deinspection.database.MyRoom
 import kotlinx.android.synthetic.main.activity_car.*
 
 
 class CarActivity : AppCompatActivity() {
-    var car = Car()
+    lateinit var db: MyRoom
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car)
-
+        db = Room.databaseBuilder(this, MyRoom::class.java, DB.DATABASE_NAME).allowMainThreadQueries().build()
 
         btnBackC.setOnClickListener(){
             val intent = Intent(this, MainMenuActivity::class.java)
@@ -37,7 +41,7 @@ class CarActivity : AppCompatActivity() {
             //val intent = Intent(this, InspectionActivity::class.java)
             //startActivity(intent)
 
-            Toast.makeText(this@CarActivity, "this feat. is not done", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@CarActivity, "Funcionalidade indisponível de momento!\nEsteja atento às nossas redes sociais para quando for lançada!\n", Toast.LENGTH_SHORT).show()
         }
 
 
@@ -185,6 +189,8 @@ class CarActivity : AppCompatActivity() {
         //every back button when editing should have a popup making sure
         //pop up
         //do you want to leave without saving?
+        val rem = Reminder()
+        rem.title = id
         val dialog: AlertDialog = AlertDialog.Builder(this)
             .setTitle("DEInspection")
             .setMessage("Confirmar uma nova atualização de $id?")
@@ -196,16 +202,18 @@ class CarActivity : AppCompatActivity() {
 
         positiveButton.setOnClickListener() {
             dialog.dismiss()
-            if (id=="oil")  car.oil.updateDate()
-            if (id=="tirePressure")  car.tirePressure.updateDate()
-            if (id=="tires")  car.tires.updateDate()
-            if (id=="airFilters")  car.airFilters.updateDate()
-            if (id=="windowCleaner")  car.windowCleaner.updateDate()
-            if (id=="custom")  car.custom.updateDate()
-            if (id=="custom2")  car.custom2.updateDate()
-
-            if (id=="stamp")  car.stamp.updateDateLicencePlate()
-            if (id=="inspection")  car.inspection.updateDateLicencePlate()
+            when(id){
+            "oil" ->  rem.updateDate()
+            "tirePressure" ->  rem.updateDate()
+            "tires" -> rem.updateDate()
+            "airFilters" ->  rem.updateDate()
+            "windowCleaner" ->  rem.updateDate()
+            "custom" -> rem.updateDate()
+            "custom2" ->  rem.updateDate()
+            "stamp" -> rem.updateDateLicensePlate()
+            "inspection" ->  rem.updateDateLicensePlate()
+            }
+            db.reminderDao().updateReminder(selected = rem.selected,title = rem.title,checkcounter = rem.checkcounter,lastdate = rem.lastdate,nextdate = rem.lastdate,reminder = rem.reminder,id = rem.id)
             Toast.makeText(this@CarActivity, "$id updated", Toast.LENGTH_SHORT).show()
 
         }
