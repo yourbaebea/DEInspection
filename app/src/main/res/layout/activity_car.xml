@@ -19,21 +19,21 @@
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/CarBrandModel"
         app:layout_constraintEnd_toStartOf="@+id/btnEditCar"
-        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.727" />
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="335dp"
-        android:layout_height="477dp"
+        android:layout_width="316dp"
+        android:layout_height="390dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/nexDateInspection"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76">
+        app:layout_constraintVertical_bias="0.8">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -50,34 +50,35 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView1"
+                   <ProgressBar
+                            android:id="@+id/progress_bar1"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            android:contentDescription="@string/todo"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView1"
-                            android:layout_width="match_parent"
-                            android:layout_height="68dp"
-                            android:text="@string/pr_xima_inspe_o" />
-
-                    </LinearLayout>
-
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
+                    
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:gravity="center"
+                            android:text="@string/pr_xima_inspe_o" />
+
                         <Button
                             android:id="@+id/btnHelp1"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -97,7 +98,7 @@
 
                         <Button
                             android:id="@+id/btnInfo1"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -117,7 +118,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate1"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -143,7 +144,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -151,34 +152,35 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView2"
+                    <ProgressBar
+                            android:id="@+id/progress_bar2"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            android:contentDescription="@string/todo"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="match_parent"
-                            android:layout_height="68dp"
-                            android:text="@string/renova_o_do_selo" />
-
-                    </LinearLayout>
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:gravity="center"
+                            android:text="@string/renova_o_do_selo" />
+
                         <Button
                             android:id="@+id/btnHelp2"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -198,7 +200,7 @@
 
                         <Button
                             android:id="@+id/btnInfo2"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -218,7 +220,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate2"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -244,7 +246,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -252,34 +254,36 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView3"
+                    <ProgressBar
+                            android:id="@+id/progress_bar3"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView3"
-                            android:layout_width="match_parent"
-                            android:layout_height="68dp"
-                            android:text="@string/attr1"
-                            tools:text="@string/mudan_a_do_leo" />
-
-                    </LinearLayout>
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:gravity="center"
+                            android:text="@string/attr1"
+                            tools:text="@string/mudan_a_do_leo" />
+
                         <Button
                             android:id="@+id/btnHelp3"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -299,7 +303,7 @@
 
                         <Button
                             android:id="@+id/btnInfo3"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -319,7 +323,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate3"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -345,7 +349,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -353,33 +357,35 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView4"
+                    <ProgressBar
+                            android:id="@+id/progress_bar4"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="68dp"
-                            android:text="@string/press_o_dos_pneus" />
-
-                    </LinearLayout>
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:gravity="center"
+                            android:text="@string/press_o_dos_pneus" />
+
                         <Button
                             android:id="@+id/btnHelp4"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -399,7 +405,7 @@
 
                         <Button
                             android:id="@+id/btnInfo4"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -419,7 +425,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate4"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -445,7 +451,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -453,33 +459,35 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView5"
+                    <ProgressBar
+                            android:id="@+id/progress_bar5"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView5"
-                            android:layout_width="match_parent"
-                            android:layout_height="68dp"
-                            android:text="@string/mudan_a_dos_pneus" />
-
-                    </LinearLayout>
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:gravity="center"
+                            android:text="@string/mudan_a_dos_pneus" />
+
                         <Button
                             android:id="@+id/btnHelp5"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -499,7 +507,7 @@
 
                         <Button
                             android:id="@+id/btnInfo5"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -519,7 +527,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate5"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -545,7 +553,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -553,33 +561,35 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView6"
+                    <ProgressBar
+                            android:id="@+id/progress_bar6"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/mudan_a_dos_filtos_de_ar" />
-
-                    </LinearLayout>
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/mudan_a_dos_filtos_de_ar" />
+
                         <Button
                             android:id="@+id/btnHelp6"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -599,7 +609,7 @@
 
                         <Button
                             android:id="@+id/btnInfo6"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -619,7 +629,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate6"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -639,7 +649,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -647,33 +657,35 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView"
+                    <ProgressBar
+                            android:id="@+id/progress_bar7"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/mudan_a_do_liquido_limpeza_de_vidros" />
-
-                    </LinearLayout>
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/mudan_a_do_liquido_limpeza_de_vidros" />
+
                         <Button
                             android:id="@+id/btnHelp7"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -693,7 +705,7 @@
 
                         <Button
                             android:id="@+id/btnInfo7"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -713,7 +725,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate7"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -733,7 +745,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -741,33 +753,35 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView8"
+                    <ProgressBar
+                            android:id="@+id/progress_bar8"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView8"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/attr1" />
-
-                    </LinearLayout>
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/attr1" />
+
                         <Button
                             android:id="@+id/btnHelp8"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -785,9 +799,11 @@
                             app:layout_constraintVertical_bias="0.524"
                             app:rippleColor="#00FFFFFF" />
 
+
+
                         <Button
                             android:id="@+id/btnInfo8"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -807,7 +823,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate8"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -827,7 +843,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -835,33 +851,35 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="153dp"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView9"
+                    <ProgressBar
+                            android:id="@+id/progress_bar9"
+                            style="@style/CircularDeterminateProgressBar"
                             android:layout_width="wrap_content"
                             android:layout_height="102dp"
-                            tools:srcCompat="@tools:sample/avatars" />
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
 
-                        <TextView
-                            android:id="@+id/textView9"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/attr1" />
-
-                    </LinearLayout>
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.135"
+                            tools:progress="40" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/attr1" />
+
                         <Button
                             android:id="@+id/btnHelp9"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/ajuda"
@@ -881,7 +899,7 @@
 
                         <Button
                             android:id="@+id/btnInfo9"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/info"
@@ -901,7 +919,7 @@
 
                         <Button
                             android:id="@+id/btnUpdate9"
-                            android:layout_width="170dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/comfortaa"
                             android:text="@string/atualizar"
@@ -930,22 +948,21 @@
         android:text="@string/mais_sobre_inspecao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toEndOf="@+id/nexDateInspection"
-        app:layout_constraintTop_toBottomOf="@+id/nexDateInspection"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
+        app:layout_constraintVertical_bias="0.43" />
 
     <TextView
         android:id="@+id/nexDateInspection"
         android:layout_width="176dp"
         android:layout_height="41dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/proximainspecao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/CarBrandModel"
@@ -967,9 +984,9 @@
         android:text="@string/edit_car_button"
         app:layout_constraintBottom_toTopOf="@+id/CarBrandModel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.69" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

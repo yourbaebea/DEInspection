@@ -19,23 +19,23 @@
         app:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/DEInspection"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.19" />
+
 
     <TextView
         android:id="@+id/settings"
-        android:layout_width="263dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="192dp"
+        android:layout_width="253dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="168dp"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
         android:text="@string/defina_os_seus_alarmes"
         android:textColor="#000000"
-        android:textSize="15sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +43,7 @@
         android:id="@+id/DEInspection"
         android:layout_width="253dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="108dp"
         android:fontFamily="@font/comfortaa_bold"
         android:text="@string/deinspection"
         android:textColor="#000000"
@@ -54,8 +54,8 @@
 
     <Button
         android:id="@+id/btnNext3"
-        android:layout_width="204dp"
-        android:layout_height="91dp"
+        android:layout_width="210dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="52dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/fim"
@@ -75,14 +75,14 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="312dp"
-        android:layout_height="267dp"
+        android:layout_width="319dp"
+        android:layout_height="246dp"
         android:layout_weight="1"
         app:layout_constraintBottom_toTopOf="@+id/btnNext3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.87">
+        app:layout_constraintVertical_bias="0.82">
 
 
         <LinearLayout
@@ -95,7 +95,7 @@
             <TextView
                 android:id="@+id/attribute2"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/pr_xima_inspe_o"
@@ -110,7 +110,7 @@
             <TextView
                 android:id="@+id/attribute3"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/renova_o_do_selo"
@@ -125,7 +125,7 @@
             <TextView
                 android:id="@+id/attribute1"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/mudan_a_do_leo"
@@ -135,12 +135,13 @@
             <SeekBar
                 android:id="@+id/seekBar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="50dp"
+                />
 
             <TextView
                 android:id="@+id/attribute4"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/press_o_dos_pneus"
@@ -155,7 +156,7 @@
             <TextView
                 android:id="@+id/attribute5"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/mudan_a_dos_pneus"
@@ -171,7 +172,7 @@
             <TextView
                 android:id="@+id/attribute6"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/mudan_a_dos_filtros_de_ar"
@@ -187,7 +188,7 @@
             <TextView
                 android:id="@+id/attribute7"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/mudan_a_do_liquido_limpeza_de_vidros"
@@ -203,7 +204,7 @@
             <TextView
                 android:id="@+id/attribute8"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/lembrete_personalizado"
@@ -219,7 +220,7 @@
             <TextView
                 android:id="@+id/attribute9"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="@string/lembrete_personalizado"

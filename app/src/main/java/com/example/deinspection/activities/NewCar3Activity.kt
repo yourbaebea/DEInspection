@@ -106,7 +106,7 @@ class NewCar3Activity : AppCompatActivity() {
             negativeButton.setOnClickListener() {
                 //save info
                 saveInfo()
-                Toast.makeText(this@NewCar3Activity, "Saving info", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@NewCar3Activity, "Saving info", Toast.LENGTH_LONG).show()
                 dialog.dismiss()
                 goBack()
             }
@@ -176,29 +176,29 @@ class NewCar3Activity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun editTV(value: Int): String {
+   fun editTV(value: Int, ola: TextView): String {
         val aux: Int
-        var str: String =""
+        var str: String = ola.text as String
         //"REMINDE ME "
         when (value) {
-            0 -> str ="never" //0
-            1 -> str ="every day" //1
-            in 2..6 -> str ="every @value days" //1-6days
+            0 -> str +=": never" //0
+            1 -> str +=": every day" //1
+            in 2..6 -> str +=": every "+ value + " days" //1-6days
             in 7..10 -> {
                 aux = 7 * (value - 6) //1-4 weeks
-                str = if (aux== 1) "every week"
-                else "every @aux weeks"
+                str += if (aux== 1) ": every week"
+                else ": every " + aux/7 + " weeks"
             }
             //in 100..Int.MAX_REMINDER //1-12 months
             in 11..21 -> {
                 aux = (value - 10) //1-11 months
-                str = if (aux== 1) "every month"
-                else "every @aux months"
+                str += if (aux== 1) ": every month"
+                else ": every " + aux + " months"
             }
             in 22..26 -> {
                 aux = (value - 21) // 1-5 years
-                str = if (aux== 1) "every year"
-                else "every @aux years"
+                str += if (aux== 1) ": every year"
+                else ": every " + aux + " years"
             }
             else -> println("something went wrong value is out of bounds")
         }
@@ -208,7 +208,7 @@ class NewCar3Activity : AppCompatActivity() {
     fun seekBar(a : SeekBar, b : TextView){
         a.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                b.text = editTV(a.progress)
+                b.text = editTV(a.progress,b)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
