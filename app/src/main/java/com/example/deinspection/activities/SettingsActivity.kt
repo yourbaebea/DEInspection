@@ -116,6 +116,7 @@ class SettingsActivity : AppCompatActivity() {
                 dialog.dismiss()
                 //dele all cars,and reset application
                 //goes to the initial activity
+                Toast.makeText(this, "Reseting all the info", Toast.LENGTH_LONG).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
 

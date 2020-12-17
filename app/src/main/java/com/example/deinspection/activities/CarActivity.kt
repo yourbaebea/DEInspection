@@ -206,7 +206,7 @@ class CarActivity : AppCompatActivity() {
 
             if (id=="stamp")  car.stamp.updateDateLicencePlate()
             if (id=="inspection")  car.inspection.updateDateLicencePlate()
-            Toast.makeText(this@CarActivity, "$id updated", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@CarActivity, "$id updated", Toast.LENGTH_LONG).show()
 
         }
         // save and then leave

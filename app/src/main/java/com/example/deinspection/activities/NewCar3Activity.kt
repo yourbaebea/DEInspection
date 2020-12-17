@@ -118,7 +118,7 @@ class NewCar3Activity : AppCompatActivity() {
             negativeButton.setOnClickListener() {
                 //save info
                 saveInfo()
-                Toast.makeText(this@NewCar3Activity, "Saving info", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@NewCar3Activity, "Saving info", Toast.LENGTH_LONG).show()
                 dialog.dismiss()
                 goBack()
             }

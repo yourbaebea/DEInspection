@@ -65,12 +65,12 @@ class NewCarActivity : AppCompatActivity() {
                 //save info
                 accepted= saveInfo(car)
                 if (accepted) {
-                    Toast.makeText(this@NewCarActivity, "Saving info", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@NewCarActivity, "Saving info", Toast.LENGTH_LONG).show()
                     dialog.dismiss()
                     goBack()
                 }
                 else {
-                    Toast.makeText(this@NewCarActivity, "Info is not acceptable, pls try again", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@NewCarActivity, "Info is not acceptable, pls try again", Toast.LENGTH_LONG).show()
                 }
             }
             //cancel and continue on this page
@@ -92,7 +92,7 @@ class NewCarActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             else {
-                Toast.makeText(this@NewCarActivity, "Info is not acceptable, pls try again", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@NewCarActivity, "Info is not acceptable, pls try again", Toast.LENGTH_LONG).show()
             }
         }
 

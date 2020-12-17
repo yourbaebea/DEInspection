@@ -3,6 +3,8 @@ package com.example.deinspection
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
+import android.widget.Toast
 
 import com.example.deinspection.activities.MainMenuActivity
 
@@ -30,8 +32,11 @@ class MainActivity : AppCompatActivity() {
         //activity main is the first page on the app, just the logo + loading bar(?)
         //
 
+        val firstanim = AnimationUtils.loadAnimation(this, R.anim.firstpage)
 
 
+        Toast.makeText(this, "new animation", Toast.LENGTH_LONG).show()
+        logocar.startAnimation(firstanim)
 
         loaded()
     }
