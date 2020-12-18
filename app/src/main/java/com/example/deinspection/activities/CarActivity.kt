@@ -25,9 +25,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.deinspection.MainActivity
+import com.example.deinspection.classes.CarReminder
 
 
 import kotlinx.android.synthetic.main.activity_car.*
+import java.sql.Struct
 import java.util.*
 
 class CarActivity : AppCompatActivity() {
@@ -38,6 +40,10 @@ class CarActivity : AppCompatActivity() {
     lateinit var alarmManager: AlarmManager
     var hour: Int = 9 // this is from the db alarm time default (its defined on the settings page)
     var minute: Int = 9 // this is from the db alarm time default (its defined on the settings page)
+    val progressBarArray = arrayOf(progress_bar1,progress_bar2,progress_bar3,progress_bar4,progress_bar5,progress_bar6,progress_bar7,progress_bar8,progress_bar9)
+    var plate = intent.extras?.get("Car plate")
+    val titleArray = arrayOf("Oil", "Inspection", "Stamp", "Tire pressure", "Tires", "Air filters", "Window Cleaner")
+    val customNames = intent.extras?.get("Customs") as Array<*>
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -46,16 +52,18 @@ class CarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_car)
         db = Room.databaseBuilder(this, MyRoom::class.java, DB.DATABASE_NAME)
             .allowMainThreadQueries().build()
-
-        setprogress(progress_bar1, car.inspection.reminder)
-        setprogress(progress_bar2, car.stamp.reminder)
-        setprogress(progress_bar3, car.oil.reminder)
-        setprogress(progress_bar4, car.tirePressure.reminder)
-        setprogress(progress_bar5, car.tires.reminder)
-        setprogress(progress_bar6, car.airFilters.reminder)
-        setprogress(progress_bar7, car.windowCleaner.reminder)
-        setprogress(progress_bar8, car.custom.reminder)
-        setprogress(progress_bar9, car.custom2.reminder)
+        val carReminderArray = db.carReminderDao().getCarReminderfromPlate(plate as String)
+        for (cr in carReminderArray) {
+            var pos = 0
+            for (t in titleArray) {
+                setprogress(progressBarArray[pos],db.reminderDao().getByIdAndTitle(cr.reminderId,t).reminder)
+                pos += 1
+            }
+            for (c in customNames) {
+                setprogress(progressBarArray[pos],db.reminderDao().getByIdAndTitle(cr.reminderId,c as String).reminder)
+                pos+=1
+            }
+        }
 
         //this function updates the selected/non selected reminders
         // if we change the duration of the reminder it only updates after the alarm or a newupdate!!!!!!!
@@ -368,41 +376,28 @@ class CarActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     fun checkSelected() {
+
+
         var rem: Reminder
-        for (i in 1..9) {
-            rem = getRem(i)
-            val intent = Intent(context, MainActivity.Receiver::class.java)
-            val pendingIntent =
-                PendingIntent.getBroadcast(context, i, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-            if (pendingIntent != null) { // if there is a pendingIntent for this id we cancel it
-                if (!rem.selected) alarmManager.cancel(pendingIntent)
-                Log.d("MainActivity", "verificamos o alarme antes de mandar notificacao")
-            } else {
-                //if there is no pending intent and selected is true, we create a new alarm
-                if (rem.selected) updateAlarm(rem, i)
-            }
-        }
+        val carReminderArray = db.carReminderDao().getCarReminderfromPlate(plate as String)
+       for (cr in carReminderArray) {
+           for (t in titleArray) {
+               var id = 0
+               rem = db.reminderDao().getByIdAndTitle(cr.reminderId, t)
+               val intent = Intent(context, MainActivity.Receiver::class.java)
+               val pendingIntent =
+                       PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+               if (pendingIntent != null) { // if there is a pendingIntent for this id we cancel it
+                   if (!rem.selected) alarmManager.cancel(pendingIntent)
+                   Log.d("MainActivity", "verificamos o alarme antes de mandar notificacao")
+               } else {
+                   //if there is no pending intent and selected is true, we create a new alarm
+                   if (rem.selected) updateAlarm(rem, id)
+               }
+               id += 1
+           }
+       }
 
-
-    }
-
-    /*
-    ROQUE O QUE É ESTE ID?????
-     */
-    fun getRem(n: Int): Reminder {
-        when (n) {
-            //o que é suposto ser este id???
-            1 -> return db.reminderDao().getByIdAndTitle(1, "oil")
-            2 -> return db.reminderDao().getByIdAndTitle(1, "tirePressure")
-            3 -> return db.reminderDao().getByIdAndTitle(1, "tires")
-            4 -> return db.reminderDao().getByIdAndTitle(1, "airFilters")
-            5 -> return db.reminderDao().getByIdAndTitle(1, "windowCleaner")
-            6 -> return db.reminderDao().getByIdAndTitle(1, "custom")
-            7 -> return db.reminderDao().getByIdAndTitle(1, "custom2")
-            8 -> return db.reminderDao().getByIdAndTitle(1, "stamp")
-            9 -> return db.reminderDao().getByIdAndTitle(1, "inspection")
-        }
-        return Reminder() //empty reminder
 
     }
 
