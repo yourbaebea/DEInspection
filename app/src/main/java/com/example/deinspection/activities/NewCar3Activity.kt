@@ -22,7 +22,7 @@ class NewCar3Activity : AppCompatActivity() {
     lateinit var db: MyRoom
     var car = db.carDao().getByLicense(plate as String) //plate já é uma string?
     val titleArray = arrayOf("Oil", "Inspection", "Stamp", "Tire pressure", "Tires", "Air filters", "Window Cleaner")
-    val customArray = intent.extras?.get("Customs") as Array<*>
+    val customNames = intent.extras?.get("Customs") as Array<*>
     val seekbarArray = arrayOf(seekBar,seekBar2,seekBar3,seekBar4,seekBar5,seekBar6,seekBar7,seekBar8,seekBar9)
 
 
@@ -141,11 +141,9 @@ class NewCar3Activity : AppCompatActivity() {
                 seekbarArray[pos].progress = db.reminderDao().getByIdAndTitle(cr.reminderId, t).reminder
                 pos+= 1
             }
-            var cpos = 0
-            for (c in customArray){
+            for (c in customNames){
                 seekbarArray[pos].progress = db.reminderDao().getByIdAndTitle(cr.reminderId, c as String).reminder
                 pos+= 1
-                cpos+= 1
             }
         }
 
@@ -163,11 +161,14 @@ class NewCar3Activity : AppCompatActivity() {
                 db.reminderDao().updateReminderByTitle(seekbarArray[pos].progress, cr.reminderId, t)
                 pos += 1
             }
-            for (c in customArray){
+            for (c in customNames){
                 db.reminderDao().updateReminderByTitle(seekbarArray[pos].progress, cr.reminderId, c as String)
                 pos+= 1
             }
         }
+        val intent = Intent(this, CarActivity::class.java)
+        intent.putExtra("Car plate", plate as String) //might go wrong
+        intent.putExtra("Customs",customNames)
     }
 
     //where the back button goes to

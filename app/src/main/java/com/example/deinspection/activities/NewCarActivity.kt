@@ -43,7 +43,7 @@ class NewCarActivity : AppCompatActivity() {
         // if the car already exists, we fill it with the info we already have
         // FOR THE LOVE OF GOD IGNORE THIS SIMPLIFICATION
         // O CARRO NAO VAI SER SEMPRE VAZIO ELE APENAS ESTÁ VAZIO PORQUE ELE FOI DEFINIDO NA LINHA 24
-        if (car !=null) filledAlready()
+        filledAlready()
 
         //every back button when editing should have a popup making sure
         btnBackNC.setOnClickListener() {
